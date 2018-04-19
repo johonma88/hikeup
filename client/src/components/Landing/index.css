@@ -1,0 +1,45 @@
+.wrapper {
+    position: relative;
+    text-align: center;
+    color: white;
+    width: 100%;
+    /* left: -15%; */
+    z-index: -1;
+    margin-top: 6%;
+}
+
+.imgMt {
+    min-width:100%;
+    min-height: 200px;
+    max-height: 400px;
+}
+
+.title {
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    z-index: 2;
+    text-align: center;
+}
+
+.shadow {
+    -webkit-box-shadow: 2px 4px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    2px 4px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         2px 4px 5px 0px rgba(50, 50, 50, 0.75);
+  }
+
+.card-t {
+    background-color: lightblue;
+    padding: 0%;
+    margin: 0% 4% 0% 4%;
+}
+
+h3 {
+    font-family: 'Gugi', cursive;
+    text-align: center;
+}
+
+ul li {
+    font-family: 'Gamja Flower', cursive;
+    font-size: 1.5em;
+}
