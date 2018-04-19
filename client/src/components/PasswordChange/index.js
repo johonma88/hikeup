@@ -45,25 +45,36 @@ class PasswordChangeForm extends Component {
       passwordOne === '';
 
     return (
+
       <form onSubmit={this.onSubmit}>
+      <div class="input-group">
+      <span class="input-group-addon text-center"><i class="glyphicon glyphicon-user"></i></span>
         <input
           value={passwordOne}
           onChange={event => this.setState(updateByPropertyName('passwordOne', event.target.value))}
           type="password"
           placeholder="New Password"
         />
+        </div>
+
+        <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
         <input
           value={passwordTwo}
           onChange={event => this.setState(updateByPropertyName('passwordTwo', event.target.value))}
           type="password"
           placeholder="Confirm New Password"
         />
-        <button disabled={isInvalid} type="submit">
-          Reset My Password
-        </button>
+        </div>
+
+        <button 
+        disabled={isInvalid} 
+        type="submit"
+        class="btn btn-success"> Reset My Password</button>
 
         { error && <p>{error.message}</p> }
       </form>
+
     );
   }
 }

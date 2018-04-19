@@ -1,4 +1,8 @@
 import React from 'react';
+import Jumbotron from "../../components/Jumbotron";
+import { Col, Row, Container } from "../../components/Grid";
+import SideMenu from  "../../components/SideMenu";
+import "../../Main.css";
 
 import AuthUserContext from '../Session/AuthUserContext';
 import PasswordChangeForm from '../PasswordChange';
@@ -8,9 +12,27 @@ const AccountPage = () =>
   <AuthUserContext.Consumer>
     {authUser =>
       <div>
-        <h5>Change Password: {authUser.email}</h5>
-        {/* <PasswordForgetForm /> */}
-        <PasswordChangeForm />
+
+              <Container fluid>
+      <Row>
+      <Col size="md-2">
+    <SideMenu />
+      </Col>
+        <Col size="md-10">
+          <Jumbotron>
+            
+            <h1 className="text-center">Reset Your Password</h1>
+          </Jumbotron>
+          <div className="container-fluid">
+            <h5>Change Password: {authUser.email}</h5>
+            <PasswordChangeForm />
+          </div>
+       
+
+              </Col>
+        </Row>
+      </Container>
+
       </div>
     }
   </AuthUserContext.Consumer>

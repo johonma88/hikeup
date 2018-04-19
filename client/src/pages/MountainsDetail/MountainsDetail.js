@@ -32,23 +32,34 @@ class MountainsDetail extends Component {
                 Fourteener: {this.state.mountain.fourteeners} 
               </h1>
             </Jumbotron>
+
+            <div class="row">
+            <div class="col-sm-6 col-md-4">
+               <div class="thumbnail">
+               <ThumbnailCustom key={this.state.mountain._id}>
+                <img src={this.state.mountain.picture} alt=""/>
+            </ThumbnailCustom>
+            <hr/>
+                <div class="caption">
+                <h3>Details for {this.state.mountain.mtranges} </h3>
+                    <p>Mountain Range: {this.state.mountain.mtranges}</p>
+                    <p>Fourteener: {this.state.mountain.fourteeners}</p>
+                    <p>Elevation: {this.state.mountain.elevation}</p>
+                    <p>Latitude: {this.state.mountain.lat} Longitude: {this.state.mountain.lon}</p>
+                    <p>Weather:  <a href={this.state.mountain.weather}  target="_blank">Click here to check the weather </a></p>
+                    <Link to="/mtsinfo">← Back to Mountain List</Link>
+              </div>
+              </div>
+              </div>
+        </div>
+
+            {/* <ThumbnailCustom key={this.state.mountain._id}>
+                <img src={this.state.mountain.picture} alt=""/>
+            </ThumbnailCustom> */}
+
             <Row>
           <Col size="md-10 md-offset-1">
-            <article>
-              <h1>Details for {this.state.mountain.mtranges} </h1>
-              
-            <p><br />
-                <h3> Mountain Range: {this.state.mountain.mtranges}</h3> 
-                <h3>Fourteener: {this.state.mountain.fourteeners} </h3>
-                <h3>Elevation: {this.state.mountain.elevation} </h3>
-                <h3>Latitude: {this.state.mountain.lat} Longitude: {this.state.mountain.lon} </h3>
-                <h3>Weather:  <a href={this.state.mountain.weather}  target="_blank">Click here to check the weather </a></h3>
-              </p>
-              <ThumbnailCustom key={this.state.mountain._id}>
-                    
-                    <img src={this.state.mountain.picture} alt=""/>
-                    </ThumbnailCustom>
-           </article>
+
           </Col>
         </Row>
           </Col>
