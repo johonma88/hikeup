@@ -123,7 +123,6 @@ class Events extends Component {
               <h1 className="center">Events</h1>
 
             </Jumbotron>
-          </Row>
           <Row>
             {this.state.events.length ? (
               <List>
