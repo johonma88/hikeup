@@ -22,6 +22,16 @@
     text-align: center;
 }
 
+.title span {
+    font-family: 'Lobster', cursive;
+    color: #f13a59;
+}
+
+.title p {
+    font-family: 'Jua', sans-serif;
+    font-size: 16px;
+}
+
 .shadow {
     -webkit-box-shadow: 2px 4px 5px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:    2px 4px 5px 0px rgba(50, 50, 50, 0.75);

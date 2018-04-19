@@ -13,10 +13,10 @@ const LandingPage = () =>
     
         <div className="row">
           <div className="col-12 text-center">
-            <div className="title">
-                <h1>Welcome to HikeUp</h1>
+          <div className="title">
+                <h1>Welcome to <span>HikeUp</span></h1>
                 <p>... where hikers meet, and summit their dreams!</p>
-              </div> 
+            </div> 
             
             <Carousel className="carousel shadow align-content">
               <Carousel.Item className="carouselItem">
