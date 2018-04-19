@@ -1,0 +1,15 @@
+
+.input-group {  
+    font-family: 'Gugi', cursive;
+    font-size: 14px;
+}
+
+.form-control {
+    background-color: gray;
+    color: black;
+}
+
+button {
+    font-family: 'Gugi', cursive;
+}
+
