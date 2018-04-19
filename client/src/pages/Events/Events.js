@@ -7,6 +7,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import "../../components/DropdownBtn/DropdownBtn.css";
 import SideMenu from  "../../components/SideMenu";
+import './Events.css'
 
 class Events extends Component {
 
@@ -112,8 +113,8 @@ class Events extends Component {
       <SideMenu />
         </Col>
           <Col size="md-10">
-            <Jumbotron>
-              <h1>Events</h1>
+            <Jumbotron className="shadow">
+              <h1 className="center">Events</h1>
             </Jumbotron>
             {this.state.events.length ? (
               <List>

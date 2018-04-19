@@ -1,5 +1,8 @@
 #sidemenu{
     font-family: 'Jua', sans-serif;
     font-size: 22px;
+}
 
+#sidemenu a {
+    color: maroon;
 }
