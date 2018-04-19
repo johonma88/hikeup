@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
 import * as firebase from 'firebase';
 import "./ChatRoom.css";
-import {GenericScrollBox, ScrollAxes, FastTrack} from 'react-scroll-box';
+
 
 
 

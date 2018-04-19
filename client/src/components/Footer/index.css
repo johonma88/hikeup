@@ -13,7 +13,7 @@ footer {
     padding: 1.5%;
 }
 
-#link {
+footer a {
     color: white;
     font-family: 'Gugi', cursive;
 }
