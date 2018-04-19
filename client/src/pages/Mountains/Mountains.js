@@ -68,10 +68,10 @@ class Mountains extends Component {
     return (
       <Container fluid>
         <Row>
-        <Col size="md-2">
+        <Col size="md-3">
       <SideMenu />
         </Col>
-          <Col size="md-10">
+          <Col size="md-8">
             <Jumbotron>
               <h1>14ers List</h1>
             </Jumbotron>

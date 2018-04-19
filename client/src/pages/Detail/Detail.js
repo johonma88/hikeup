@@ -35,10 +35,10 @@ class Detail extends Component {
 
             <Jumbotron>
           <Row>
-          <Col size="md-2">
+          <Col size="md-3">
   
         </Col>
-          <Col size="md-10 centered">   
+          <Col size="md-8 centered">   
           <Col size="md-5"> 
               <h3>Description:</h3>
               <p>{this.state.event.description}</p>

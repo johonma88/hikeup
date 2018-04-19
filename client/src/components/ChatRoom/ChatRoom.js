@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import * as firebase from 'firebase'
+import * as firebase from 'firebase';
+import "./ChatRoom.css";
+import {GenericScrollBox, ScrollAxes, FastTrack} from 'react-scroll-box';
+
+
 
 class ChatRoom extends Component {
 
@@ -16,6 +20,7 @@ constructor (props, context) {
 
 componentDidMount(){
     console.log('componentDidMount')
+ 
     firebase.database().ref('messages/').on('value', (snapshot)=> {
       
       const currentMessages = snapshot.val()
@@ -43,12 +48,9 @@ submitMessage(event){
     }
 
     firebase.database().ref('messages/'+nextMessage.id).set(nextMessage)
-// var list = Object.assign([], this.state.messages)
-// list.push(nextMessage)
-// this.setState({
-//   messages: list
-// })
+
 }
+
 
   render() {
 
@@ -58,30 +60,33 @@ submitMessage(event){
       )
     })
 
+   
+    
+
     return (
 
-        // <div>
-        //   <ol>
-        //       {currentMessage}
-        //     </ol>
-        //     <input onChange={this.updateMessage} type="text" placeholder="message" />
-        //     <br />
-        //     <button onClick={this.submitMessage}>Submit Message</button>
-        // </div>
-      <div className="container">
-        <div class="list-group">
-        
-        <p>{currentMessage}</p>
-        
-        <div class="input-group input-group-lg">
-        <input onChange={this.updateMessage} type="text" placeholder="message" />
-        <button onClick={this.submitMessage}>Submit Message</button>
-        </div>
+    <div>
+       <h3 id="chatHeader"> Hike Up Chat </h3>
+      <div id="chatContainer">
+      
+       <div className="list-group" id="chatBody">
+            
+               <p>{currentMessage}</p> <br />
+              
+              
+            </div>
+          </div>
+          {/* <div className="input-group input-group-lg"> */}
+               <input onChange={this.updateMessage} type="text" placeholder="message" />
+               <button onClick={this.submitMessage}><span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
+               {/* </div> */}
       </div>
-      </div>
+       
+
     
     );
   }
 }
+
 
 export default ChatRoom;

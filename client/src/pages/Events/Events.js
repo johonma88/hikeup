@@ -7,6 +7,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import "../../components/DropdownBtn/DropdownBtn.css";
 import SideMenu from  "../../components/SideMenu";
+import ChatRoom from "../../components/ChatRoom";
 
 class Events extends Component {
 
@@ -108,13 +109,21 @@ class Events extends Component {
     return (
       <Container fluid>
         <Row>
-        <Col size="md-2">
-      <SideMenu />
+        <Col size="md-3">
+            <Row>
+            {/* <Col size="md-3"> */}
+           <SideMenu /><br /><br /><br /><br /><br /><br /><br /><br />
+           {/* </Col> */}
+           </Row>
+         
         </Col>
-          <Col size="md-10">
+          <Col size="md-8">
+          <Row>
             <Jumbotron>
               <h1>Events</h1>
             </Jumbotron>
+          </Row>
+          <Row>
             {this.state.events.length ? (
               <List>
                 {this.state.events.map(event => (
@@ -131,6 +140,7 @@ class Events extends Component {
             ) : (
               <h3>No Results to Display</h3>
             )}
+          </Row>
           </Col>
         </Row>
       </Container>

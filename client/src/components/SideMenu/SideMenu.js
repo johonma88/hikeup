@@ -1,6 +1,7 @@
 import React from 'react';
 import * as routes from '../../constants/routes';
 import "./SideMenu.css";
+import ChatRoom from "../../components/ChatRoom";
 
 
 
@@ -19,7 +20,8 @@ const SideMenu = () =>
       <span><a href="/create-events">Create HikeUp</a></span><br />
       <span><a href="/mtsinfo">Mountains</a></span><br />
       <span><a href="/chatpage">Chat</a></span><br />
-   
+      <br /><br /><br /><br />
+      <ChatRoom />
  
   </div>
 

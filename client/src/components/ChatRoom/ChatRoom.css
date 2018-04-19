@@ -1,0 +1,15 @@
+#chatHeader{
+    
+    
+}
+
+#chatContainer{
+    height: 50vh;
+    width: 30rem;
+    background-color: #89d8f0;
+    color: black;
+    font-family: monospace;
+    padding: 2rem;
+    overflow: scroll;
+
+}
