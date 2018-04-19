@@ -4,8 +4,6 @@ import React from 'react';
 import AuthUserContext from '../Session/AuthUserContext';
 import SignOutButton from '../SignOut';
 import { SignInForm } from '../SignIn/index';
-import {PasswordForgetLink} from "../PasswordForget/index";
-import { SignUpLink } from '../SignUp/index';
 import { Link } from 'react-router-dom';
 import * as routes from '../../constants/routes';
 
@@ -27,10 +25,10 @@ const NavigationAuth = () =>
 <nav class="navbar navbar-inverse shadow">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-logo left" href="/"><img className="logo" src= { require('./mountains-logo.png') } />Hike Up</a>
+      <a class="navbar-logo left" href="/"><img className="logo" alt="Mountain Logo" src= { require('./mountains-logo.png') } /></a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li class="active"><a href="/">Home</a></li>
       <li><a href="account">Account</a></li>
       <li><a href="events">HikeUp Events</a></li>
       <li><a href="create-events">Create HikeUp</a></li>
@@ -47,7 +45,7 @@ const NavigationNonAuth = () =>
 <nav class="navbar navbar-inverse shadow">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-logo left" href="/"><img className="logo" src= { require('./mountains-logo.png') } /></a>
+      <a class="navbar-logo left" href="/"><img className="logo" alt="Mountain Logo"  src= { require('./mountains-logo.png') } /></a>
     </div>
     <ul class="nav navbar-nav">
     </ul>
