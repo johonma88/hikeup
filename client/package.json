@@ -12,7 +12,9 @@
     "react-dom": "^16.0.0",
     "react-router-dom": "^4.1.2",
     "react-scripts": "1.0.14",
-    "react-select": "^1.2.1"
+    "react-scroll-box": "^0.3.5",
+    "react-select": "^1.2.1",
+    "recompose": "^0.23.5"
   },
   "scripts": {
     "start": "react-scripts start",
