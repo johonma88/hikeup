@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
@@ -86,7 +85,6 @@ class Mountains extends Component {
                       </strong>
                       <Link to={"/mtsinfo/" + mtinfo._id}>More Details
                     </Link>
-                    {/* <DeleteBtn onClick={() => this.deleteMtInfo(mtinfo._id)} /> */}
                   </ListItem>
                 ))}
               </List>

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
 import * as firebase from 'firebase'
 
 class ChatRoom extends Component {

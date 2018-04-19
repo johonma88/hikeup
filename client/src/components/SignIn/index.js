@@ -67,7 +67,7 @@ class SignInForm extends Component {
     return (
      
      
-      <form class="navbar-form navbar-right" role="form" onSubmit={this.onSubmit} id="signin">
+      <form class="navbar-form navbar-right" onSubmit={this.onSubmit} id="signin">
 
         <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
