@@ -9,6 +9,7 @@ import "../../components/DropdownBtn/DropdownBtn.css";
 import SideMenu from  "../../components/SideMenu";
 import './Events.css'
 
+
 class Events extends Component {
 
   constructor(props)
@@ -109,13 +110,21 @@ class Events extends Component {
     return (
       <Container fluid>
         <Row>
-        <Col size="md-2">
-      <SideMenu />
+        <Col size="md-3">
+            <Row>
+            {/* <Col size="md-3"> */}
+           <SideMenu /><br /><br /><br /><br /><br /><br /><br /><br />
+           {/* </Col> */}
+           </Row>
+         
         </Col>
-          <Col size="md-10">
+          <Col size="md-8">
             <Jumbotron className="shadow">
               <h1 className="center">Events</h1>
+
             </Jumbotron>
+          </Row>
+          <Row>
             {this.state.events.length ? (
               <List>
                 {this.state.events.map(event => (
@@ -132,6 +141,7 @@ class Events extends Component {
             ) : (
               <h3>No Results to Display</h3>
             )}
+          </Row>
           </Col>
         </Row>
       </Container>
