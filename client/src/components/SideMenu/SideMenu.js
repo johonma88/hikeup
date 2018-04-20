@@ -9,7 +9,7 @@ const SideMenu = () =>
       <span><a href="/events">HikeUp Events</a></span><br />
       <span><a href="/create-events">Create HikeUp</a></span><br />
       <span><a href="/mtsinfo">Mountains</a></span><br />
-      <span><a href="/chatpage">Chat</a></span><br />
+      {/* <span><a href="/chatpage">Chat</a></span><br /> */}
       <br /><br /><br /><br />
       <ChatRoom />
  

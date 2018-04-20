@@ -1,15 +1,19 @@
-#chatHeader{
-    
+.panel-heading,
+.panel-footer
+{
+    background-color: lightblue;
     
 }
 
 #chatContainer{
     height: 50vh;
     width: 30rem;
-    background-color: #89d8f0;
+    background-color: #ffffffc4;
     color: black;
     font-family: monospace;
     padding: 2rem;
     overflow: scroll;
+    box-shadow:         2px 4px 5px 0px rgba(50, 50, 50, 0.75);
 
 }
+
