@@ -111,11 +111,11 @@ class Events extends Component {
       <Container fluid>
         <Row>
         <Col size="md-3">
-            <Row>
-            {/* <Col size="md-3"> */}
-           <SideMenu /><br /><br /><br /><br /><br /><br /><br /><br />
-           {/* </Col> */}
-           </Row>
+              <Row>
+            
+            <SideMenu /><br /><br /><br /><br /><br /><br /><br /><br />
+          
+            </Row>
          
         </Col>
           <Col size="md-8">
@@ -123,16 +123,17 @@ class Events extends Component {
               <h1 className="center">Events</h1>
 
             </Jumbotron>
-          </Row>
+          
           <Row>
             {this.state.events.length ? (
               <List>
                 {this.state.events.map(event => (
                   <ListItem key={event._id}>
-                    <Link to={"/events/" + event._id}>
+                  
                       <strong>
-                        {event.title}   to {event.fourteeners}
+                        {event.title}   to {event.fourtennerSelected}
                       </strong>
+                      <Link to={"/events/" + event._id}>More Details ->
                     </Link>
                     <DeleteBtn onClick={() => this.deleteEvent(event._id)} />
                   </ListItem>
@@ -141,10 +142,13 @@ class Events extends Component {
             ) : (
               <h3>No Results to Display</h3>
             )}
+            
           </Row>
           </Col>
         </Row>
       </Container>
+
+
     );
   }
 }

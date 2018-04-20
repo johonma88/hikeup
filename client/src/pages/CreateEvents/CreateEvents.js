@@ -23,6 +23,7 @@ class CreateEvents extends Component {
       organizer: "",
       meetingPoint: "",
       contactInfo: "",
+      url:"",
   
       mountains: [],
       mtranges: "", 
@@ -42,7 +43,7 @@ class CreateEvents extends Component {
   loadEvents = () => {
     API.getEvents()
       .then(res =>
-        this.setState({ events: res.data, title: "", description: "", fourteeners: "", date: "", time: "", organizer:"",meetingPoint:"", contactInfo: "" })
+        this.setState({ events: res.data, title: "", description: "", fourteeners: "", date: "", time: "", organizer:"",meetingPoint:"", contactInfo: "", url:"" })
       )
       .catch(err => console.log(err));
   };
@@ -68,6 +69,7 @@ class CreateEvents extends Component {
     FOURTEENRSELECTED: ${this.state.fourtennerSelected}
     DATE: ${this.state.date}
     TIME: ${this.state.time}
+    URL: ${this.state.url}
     `);
 
     const { name, value } = event.target;
@@ -93,7 +95,8 @@ class CreateEvents extends Component {
         fourtennerSelected: this.state.fourtennerSelected,
         date: new Date(this.state.date),
         time: this.state.time,
-        meetingPoint: this.state.meetingPoint
+        meetingPoint: this.state.meetingPoint,
+        url: this.state.url,
       })
         .then(res => this.loadEvents())
         .catch(err => console.log(err));
@@ -159,6 +162,12 @@ class CreateEvents extends Component {
                 onChange={this.handleInputChange}
                 name="meetingPoint"
                 placeholder="meetingPoint (required)"
+              />
+                <Input
+                value={this.state.url}
+                onChange={this.handleInputChange}
+                name="url"
+                placeholder="Url (required)"
               />
               <FormBtn
                 disabled={!(this.state.description && this.state.title && this.state.fourtennerSelected && this.state.date && this.state.time)}

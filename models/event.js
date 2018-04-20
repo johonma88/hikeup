@@ -10,6 +10,7 @@ const eventSchema = new Schema({
   date:  { type: Date, required: true },
   time: { type: String, required: true },
   meetingPoint: { type: String, required: true },
+  url: { type: String, required: true },
 
 });
 
