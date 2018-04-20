@@ -28,7 +28,11 @@ const NavigationAuth = () =>
       <a class="navbar-logo left" href="/"><img className="logo" alt="Mountain Logo" src= { require('./mountains-logo.png') } /></a>
     </div>
     <ul class="nav navbar-nav">
+
       {/* <li class="active"><a href="/">Home</a></li> */}
+
+      <li><a href="/">Home</a></li>
+
       <li><a href="account">Account</a></li>
       <li><a href="events">HikeUp Events</a></li>
       <li><a href="create-events">Create HikeUp</a></li>
