@@ -133,7 +133,7 @@ class Events extends Component {
                       <strong>
                         {event.title}   to {event.fourtennerSelected}
                       </strong>
-                      <Link to={"/events/" + event._id}>More Details ->
+                      <Link to={"/events/" + event._id}>    More Details ->
                     </Link>
                     <DeleteBtn onClick={() => this.deleteEvent(event._id)} />
                   </ListItem>
