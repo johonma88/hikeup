@@ -21,7 +21,8 @@ class Mountains extends Component {
     lat: "",
     lon: "",
     weather: "",
-    show: false
+    show: false,
+    mountain: {}
   };
 
 
@@ -36,6 +37,7 @@ class Mountains extends Component {
       )
       .catch(err => console.log(err));
   };
+  
 
   deleteMtInfo = id => {
     API.deleteMtInfo(id)
@@ -85,12 +87,6 @@ class Mountains extends Component {
               <h1>14ers List</h1>
             </Jumbotron>
 
-            <input type="button"
-                  onClick={this.showModal}
-                   value="Show Modal" />
-
-            
-
             {this.state.mtsinfo.length ? (
               <List>
                 {this.state.mtsinfo.map(mtinfo => (
@@ -100,25 +96,11 @@ class Mountains extends Component {
                         Mountain Range: {mtinfo.mtranges} <br /> 
                         14ner: {mtinfo.fourteeners} <br />
                       </strong>
-                      <Link to={"/mtsinfo/" + mtinfo._id}>More Details
-                     
-                      <Modal 
-                         key={mtinfo._id}
-                        onClose={this.showModal}
-                        show={this.state.show}>
-                             <ThumbnailCustom key={mtinfo._id}>
-                            <img src={mtinfo.picture} alt=""/>
-                        </ThumbnailCustom>
-                          <strong>
-                        Mountain Range: {mtinfo.mtranges} <br /> 
-                        14ner: {mtinfo.fourteeners} <br />
-                      </strong>
-            
-
-           
-               
-                      </Modal>
-                    </Link>
+                      {/* <Link to={"/mtsinfo/" + mtinfo._id}>More Details </Link> */}
+                 
+                
+                    <Modal id={mtinfo._id} />
+                  
                   </ListItem>
                 ))}
               </List>
