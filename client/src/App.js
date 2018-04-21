@@ -20,17 +20,26 @@ import PasswordForgetPage from './components/PasswordForget';
 import HomePage from './components/Home';
 import AccountPage from './components/Account';
 import withAuthentication from './components/Session/withAuthentication';
+import AuthUserContext from './components/Session/AuthUserContext';
 
-const App = () => (
+const App = () =>
+<AuthUserContext.Consumer>
+  {authUser => authUser
+    ? <AppAuth />
+    : <AppNonAuth />
+  }
+</AuthUserContext.Consumer>
+
+const AppAuth = () => (
   <Router>
     <div>
       <Navigation />
-      <Switch>
-        <Route exact path="/" component={LandingPage} />
+       <Switch>
+        <Route exact path="/" component={Events} />
         <Route exact path="/signup" component={SignUpPage} />
         <Route exact path="/signin" component={SignInPage} />
         <Route exact path="/pw-forget" component={PasswordForgetPage} />
-        <Route exact path="/home" component={HomePage} />
+        {/* <Route exact path="/home" component={HomePage} /> */}
         <Route exact path="/account" component={AccountPage} />
 
         <Route exact path="/events" component={Events} />
@@ -45,7 +54,24 @@ const App = () => (
     </div>
   </Router>
 );
+const AppNonAuth = () => (
+  <Router>
+  <div>
+  <Navigation />
+     <Switch>
+      <Route exact path="/" component={LandingPage} />
+      <Route exact path="/signup" component={SignUpPage} />
+      <Route exact path="/signin" component={SignInPage} />
+      <Route exact path="/pw-forget" component={PasswordForgetPage} />
+      {/* <Route exact path="/home" component={HomePage} /> */}
+      <Route exact path="/account" component={AccountPage} />
 
+      <Route component={NoMatch} />
+    </Switch>
+    <Footer />
+  </div>
+</Router>
+);
 // export default App;
 
 export default withAuthentication(App);
