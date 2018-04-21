@@ -7,8 +7,6 @@ import { List, ListItem } from "../../components/List";
 import "../../components/DropdownBtn/DropdownBtn.css";
 import SideMenu from  "../../components/SideMenu";
 import Modal from  "../../components/Modal/Modal";
-import ThumbnailCustom from "../../components/ThumbnailCustom";
-
 
 
 class Mountains extends Component {
@@ -21,8 +19,7 @@ class Mountains extends Component {
     lat: "",
     lon: "",
     weather: "",
-    show: false,
-    mountain: {}
+    show: false
   };
 
 
@@ -37,7 +34,6 @@ class Mountains extends Component {
       )
       .catch(err => console.log(err));
   };
-  
 
   deleteMtInfo = id => {
     API.deleteMtInfo(id)
@@ -87,6 +83,12 @@ class Mountains extends Component {
               <h1>14ers List</h1>
             </Jumbotron>
 
+            <input type="button"
+                  onClick={this.showModal}
+                   value="Show Modal" />
+
+            
+
             {this.state.mtsinfo.length ? (
               <List>
                 {this.state.mtsinfo.map(mtinfo => (
@@ -96,31 +98,13 @@ class Mountains extends Component {
                         Mountain Range: {mtinfo.mtranges} <br /> 
                         14ner: {mtinfo.fourteeners} <br />
                       </strong>
-                      <input type="button"
-                  onClick={this.showModal}
-                   value="Show Modal" />
-                      {/* <Link to={"/mtsinfo/" + mtinfo._id}>More Details */}
-                      <Modal
-                        key={mtinfo._id}
+                      <Link to={"/mtsinfo/" + mtinfo._id}>More Details
+                      <Modal 
                         onClose={this.showModal}
                         show={this.state.show}>
-                      <div class="thumbnail">
-               <ThumbnailCustom key={mtinfo._id}>
-                <img src={mtinfo.picture} alt=""/>
-            </ThumbnailCustom>
-            <hr/>
-                <div class="caption">
-                <h3>Details for {mtinfo.mtranges} </h3>
-                    <p>Mountain Range: {mtinfo.mtranges}</p>
-                    <p>Fourteener: {mtinfo.fourteeners}</p>
-                    <p>Elevation: {mtinfo.elevation}</p>
-                    <p>Latitude: {mtinfo.lat} Longitude: {mtinfo.lon}</p>
-                    <p>Weather:  <a href={mtinfo.weather}  target="_blank">Click here to check the weather </a></p>
-                    {/* <Link to="/mtsinfo">← Back to Mountain List</Link> */}
-              </div>
-              </div>
+                        This message is from Modal!
                       </Modal>
-                    {/* </Link> */}
+                    </Link>
                   </ListItem>
                 ))}
               </List>
