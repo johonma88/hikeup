@@ -6,11 +6,10 @@ import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import "../../components/DropdownBtn/DropdownBtn.css";
 import SideMenu from  "../../components/SideMenu";
+import Modal from  "../../components/Modal/Modal";
 
 
 class Mountains extends Component {
-
-
 
   state = {
     mtsinfo: [],
@@ -19,7 +18,8 @@ class Mountains extends Component {
     elevation: "",
     lat: "",
     lon: "",
-    weather: ""
+    weather: "",
+    show: false
   };
 
 
@@ -64,6 +64,13 @@ class Mountains extends Component {
     }
   };
 
+  showModal = () => {
+    this.setState({
+      ...this.state,
+      show: !this.state.show
+    });
+  }
+
   render() {
     return (
       <Container fluid>
@@ -75,6 +82,13 @@ class Mountains extends Component {
             <Jumbotron>
               <h1>14ers List</h1>
             </Jumbotron>
+
+            <input type="button"
+                  onClick={this.showModal}
+                   value="Show Modal" />
+
+            
+
             {this.state.mtsinfo.length ? (
               <List>
                 {this.state.mtsinfo.map(mtinfo => (
@@ -85,6 +99,11 @@ class Mountains extends Component {
                         14ner: {mtinfo.fourteeners} <br />
                       </strong>
                       <Link to={"/mtsinfo/" + mtinfo._id}>More Details
+                      <Modal 
+                        onClose={this.showModal}
+                        show={this.state.show}>
+                        This message is from Modal!
+                      </Modal>
                     </Link>
                   </ListItem>
                 ))}
