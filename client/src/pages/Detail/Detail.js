@@ -7,6 +7,7 @@ import SideMenu from  "../../components/SideMenu";
 import ThumbnailCustom from "../../components/ThumbnailCustom";
 import moment from 'moment';
 
+
 class Detail extends Component {
   state = {
     event: {},

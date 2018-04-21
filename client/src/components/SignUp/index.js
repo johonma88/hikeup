@@ -81,37 +81,44 @@ class SignUpForm extends Component {
       email === '';
 
     return (
+      <div className="panel panel-default" >
+      <div className="panel-heading" id="signInTitle">
+      <h3>Create an HikeUp Account</h3>
+      </div>
+      <div className="panel-body">
       <form onSubmit={this.onSubmit}>
-        <input
+       Full Name: <input
           value={username}
           onChange={event => this.setState(updateByPropertyName('username', event.target.value))}
           type="text"
           placeholder="Full Name"
-        />
-        <input
+        /><br />
+        Email: <input
           value={email}
           onChange={event => this.setState(updateByPropertyName('email', event.target.value))}
           type="text"
           placeholder="Email Address"
-        />
-        <input
+        /> <br />
+        Password: <input
           value={passwordOne}
           onChange={event => this.setState(updateByPropertyName('passwordOne', event.target.value))}
           type="password"
           placeholder="Password"
-        />
-        <input
+        /> <br />
+        Retype your password: <input
           value={passwordTwo}
           onChange={event => this.setState(updateByPropertyName('passwordTwo', event.target.value))}
           type="password"
           placeholder="Confirm Password"
-        />
+        /> <br />
         <button disabled={isInvalid} type="submit">
           Sign Up
         </button>
-
+      
         { error && <p>{error.message}</p> }
       </form>
+      </div>
+</div>
     );
   }
 }

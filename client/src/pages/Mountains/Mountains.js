@@ -7,6 +7,7 @@ import { List, ListItem } from "../../components/List";
 import "../../components/DropdownBtn/DropdownBtn.css";
 import SideMenu from  "../../components/SideMenu";
 
+
 class Mountains extends Component {
 
 

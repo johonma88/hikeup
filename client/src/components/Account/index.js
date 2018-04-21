@@ -25,6 +25,7 @@ const AccountPage = () =>
           </Jumbotron>
           <div className="container-fluid">
             <h5>Change Password: {authUser.email}</h5>
+            
             <PasswordChangeForm />
           </div>
        
