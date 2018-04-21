@@ -96,31 +96,11 @@ class Mountains extends Component {
                         Mountain Range: {mtinfo.mtranges} <br /> 
                         14ner: {mtinfo.fourteeners} <br />
                       </strong>
-                      <input type="button"
-                  onClick={this.showModal}
-                   value="Show Modal" />
-                      {/* <Link to={"/mtsinfo/" + mtinfo._id}>More Details */}
-                      <Modal
-                        key={mtinfo._id}
-                        onClose={this.showModal}
-                        show={this.state.show}>
-                      <div class="thumbnail">
-               <ThumbnailCustom key={mtinfo._id}>
-                <img src={mtinfo.picture} alt=""/>
-            </ThumbnailCustom>
-            <hr/>
-                <div class="caption">
-                <h3>Details for {mtinfo.mtranges} </h3>
-                    <p>Mountain Range: {mtinfo.mtranges}</p>
-                    <p>Fourteener: {mtinfo.fourteeners}</p>
-                    <p>Elevation: {mtinfo.elevation}</p>
-                    <p>Latitude: {mtinfo.lat} Longitude: {mtinfo.lon}</p>
-                    <p>Weather:  <a href={mtinfo.weather}  target="_blank">Click here to check the weather </a></p>
-                    {/* <Link to="/mtsinfo">← Back to Mountain List</Link> */}
-              </div>
-              </div>
-                      </Modal>
-                    {/* </Link> */}
+                      {/* <Link to={"/mtsinfo/" + mtinfo._id}>More Details </Link> */}
+                 
+                
+                    <Modal id={mtinfo._id} />
+                  
                   </ListItem>
                 ))}
               </List>

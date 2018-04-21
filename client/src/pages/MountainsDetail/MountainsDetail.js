@@ -5,6 +5,7 @@ import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import ThumbnailCustom from "../../components/ThumbnailCustom";
 import SideMenu from  "../../components/SideMenu";
+import Modal from  "../../components/Modal/Modal";
 
 
 class MountainsDetail extends Component {
@@ -67,6 +68,9 @@ class MountainsDetail extends Component {
           </Col>
         </Row>
       </Container>
+
+
+   
     );
   }
 }

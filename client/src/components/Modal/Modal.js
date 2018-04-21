@@ -1,84 +1,55 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'react-responsive-modal/lib/react-responsive-modal.css';
+import Modal from 'react-responsive-modal/lib/css';
+import API from "../../utils/API";
+import ThumbnailCustom from "../../components/ThumbnailCustom";
 
-import PropTypes from 'prop-types';
+export default class App extends React.Component {
+  state = {
+    open: false,
+    mountain: {},
+  };
 
-const backdropStyle = {
-    position: 'fixed',
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    backgroundColor: 'rgba(0,0,0,0,0.3)',
-    padding: 50
-}
+  onOpenModal = () => {
+    this.setState({ open: true });
+   
+        API.getMtInfo(this.props.id)
+          .then(res => this.setState({ mountain: res.data }))
+          .catch(err => console.log(err));
+      
+  };
 
-const modalStyle = {
-    backgroundColor: '#fff',
-    borderRadius: 5,
-    maxWidth: 500,
-    minHeight: 300,
-    margin: '0 auto',
-    padding: 30,
-    position: "relative"
-};
+  onCloseModal = () => {
+    this.setState({ open: false });
+  };
 
-const footerStyle = {
-    position: "absolute",
-    bottom: 20
-};
-
-const modalRoot = document.getElementById("modal-root");
-
-export default class Modal extends React.Component {
-    constructor(props) {
-        super(props);
-        this.el = document.createElement("div");
-    }
-
-    onClose = (e) => {
-        this.props.onClose && this.props.onClose(e);
-    }
-
-    onKeyup = (e) => {
-        if (e.which === 27 && this.props.show) {
-            this.onClose(e);
-        }
-    }
-
-    componentDidMount() {
-        document.addEventListener("keyup", this.onKeyUp);
-        modalRoot.appendChild(this.el);
-    }
-
-    componentWillUnmount() {
-        document.removeEventListener("keyup", this.onKeyUp);
-        modalRoot.removeChild(this.el);
-    }
-
-    render() {
-        var modalUI = (
-            <div style={backdropStyle}>
-                <div style={modalStyle}>
-                {this.props.children}
-                <div style={footerStyle}>
-                    <button onClick={(e) => { this.onClose(e)}}>
-                        close 
-                    </button>
-                </div>
-                </div>
-            </div>
-        );
-        if (!this.props.show) {
-            return null;
-        }
-        return ReactDOM.createPortal (
-            modalUI,
-            this.el,
-        );
-    }
-}
-
-Modal.propTypes = {
-    onClose: PropTypes.func.isRequired
+  render() {
+    const { open } = this.state;
+    return (
+      <div className="example">
+        <button className="btn btn-action" onClick={this.onOpenModal}>
+          More Details ->
+        </button>{' '}
+      
+        <Modal open={open} onClose={this.onCloseModal} little key={this.state.mountain._id}>
+        <div class="thumbnail">
+        <ThumbnailCustom key={this.state.mountain._id}>
+         <img src={this.state.mountain.picture} alt=""/>
+     </ThumbnailCustom>
+     <hr/>
+         <div class="caption">
+         <h3>Details for {this.state.mountain.mtranges} </h3>
+             <p>Mountain Range: {this.state.mountain.mtranges}</p>
+             <p>Fourteener: {this.state.mountain.fourteeners}</p>
+             <p>Elevation: {this.state.mountain.elevation}</p>
+             <p>Latitude: {this.state.mountain.lat} Longitude: {this.state.mountain.lon}</p>
+             <p>Weather:  <a href={this.state.mountain.weather}  target="_blank">Click here to check the weather </a></p>
+           
+       </div>
+       </div>
+        </Modal>
+      </div>
+    );
+  }
 }
