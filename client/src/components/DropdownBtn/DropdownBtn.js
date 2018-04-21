@@ -60,9 +60,9 @@ loadMountains = () => {
   render() {
     return (
    
-      <div className="form-group">
-        <label >Select Mountain Range / 14ers (select one):</label>
-        <select className="form-control" id="dropdown" ref = {(input)=> this.menu = input} onChange={this.handleChange}>
+      <div className="form-group" >
+        Select Mountain Range / 14ers (select one):
+        <select className="form-control" id="mountainsBtn" ref = {(input)=> this.menu = input} onChange={this.handleChange}>
         {this.state.mountains.map((mountain, index) => (
           <option key={index}  value={mountain.fourteeners} >Mountain Range: {mountain.mtranges} 14ner: {mountain.fourteeners}</option>
         ))}

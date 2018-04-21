@@ -41,6 +41,7 @@ updateMessage(event){
 
 submitMessage(event){
   console.log('submitMessage: '+this.state.message)
+
   const nextMessage = {
       id: this.state.messages.length,
       text: this.state.message
@@ -64,23 +65,37 @@ submitMessage(event){
 
     return (
 
-    <div>
-       <h3 id="chatHeader"> Hike Up Chat </h3>
-      <div id="chatContainer">
+    // <div>
+    //    <h3 id="chatHeader"> Hike Up Chat </h3>
+    //   <div id="chatContainer">
       
-       <div className="list-group" id="chatBody">
+    //    <div className="list-group shadow" id="chatBody">
             
-               <p>{currentMessage}</p> <br />
+    //            <p>{currentMessage}</p> <br />
               
               
-            </div>
-          </div>
-          {/* <div className="input-group input-group-lg"> */}
-               <input onChange={this.updateMessage} type="text" placeholder="message" />
-               <button onClick={this.submitMessage}><span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
-               {/* </div> */}
-      </div>
+    //         </div>
+    //       </div>
+    //       {/* <div className="input-group input-group-lg"> */}
+    //            <input onChange={this.updateMessage} type="text" placeholder="message" />
+    //            <button onClick={this.submitMessage}><span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
+    //            {/* </div> */}
+    //   </div>
        
+
+
+       <div className="panel" id="chatPanel" >
+       <div className="panel-heading">
+         <h3 className="panel-title">Hike Up Chat</h3>
+       </div>
+       <div className="panel-body"  id="chatContainer">
+       <p>{currentMessage}</p> <br />
+       </div>
+       <div className="panel-footer">
+       <input onChange={this.updateMessage} type="text" placeholder="message" />
+               <button onClick={this.submitMessage}><span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
+       </div>
+     </div>
 
     
     );

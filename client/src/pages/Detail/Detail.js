@@ -4,6 +4,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import SideMenu from  "../../components/SideMenu";
+import ThumbnailCustom from "../../components/ThumbnailCustom";
 
 class Detail extends Component {
   state = {
@@ -23,56 +24,69 @@ class Detail extends Component {
   render() {
     return (
       <Container fluid>
-        <Row>
-        <Col size="md-2">
+        {/* <Row>
+        <Col size="md-3">
       <SideMenu />
         </Col>
-          <Col size="md-10 centered">
+          <Col size="md-8 centered">
             <Jumbotron>
               <h1>{this.state.event.title}</h1>
             </Jumbotron>
-
-
-            <Jumbotron>
-          <Row>
-          <Col size="md-3">
-  
-        </Col>
-          <Col size="md-8 centered">   
-          <Col size="md-5"> 
-              <h3>Description:</h3>
-              <p>{this.state.event.description}</p>
-              <h3>Mountain:</h3>
-              <p>{this.state.event.fourtennerSelected}</p>
-              <h3>Time/ Date:</h3>
-              <p>{this.state.event.date} at  {this.state.event.time}</p>
-          </Col>
-
-          <Col size="md-5"> 
-              <h3>Contact Info:</h3>
-              <p>Organizer:{this.state.event.organizer}</p>
-              <h3>Phone/Email:</h3>
-              <p>{this.state.event.contactInfo}</p>
-              <h3>Meeting Point:</h3>
-              <p>{this.state.event.meetingPoint}</p>
-             
-          </Col>
-          </Col>
-          </Row>
-        </Jumbotron>
-       
-
-          </Col>
-      </Row>
-
-       
-        
-        <Row>
-          <Col size="md-2">
             <Link to="/events">← Back to Events</Link>
+        
+            <div className="container">
+          <Row>
+           <Col size="md-6"> 
+              
+             <h4> <strong id="tag">Description: </strong> {this.state.event.description}</h4>
+             <h4> <strong id="tag">Mountain: </strong> {this.state.event.fourtennerSelected}</h4>
+             <h4> <strong id="tag">Time/ Date:</strong> {this.state.event.date} at  {this.state.event.time}</h4>
+         </Col>
+
+          <Col size="md-6"> 
+          <h4> <strong id="tag">Contact Info: </strong> {this.state.event.organizer}</h4>
+          <h4> <strong id="tag">Phone/Email: </strong> {this.state.event.contactInfo}</h4>
+          <h4> <strong id="tag">Meeting Point: </strong> {this.state.event.meetingPoint}</h4>  
           </Col>
-        </Row>
-      </Container>
+              <ThumbnailCustom key={this.state.event._id}>
+                    <img src={this.state.event.url} alt=""/>
+               </ThumbnailCustom>
+          </Row>
+       </div>
+   </Col>
+      </Row> */}
+       <Row>
+        <Col size="md-3">
+      <SideMenu />
+        </Col>
+          <Col size="md-8 centered">
+            <Jumbotron>
+              <h1>{this.state.event.title}</h1>
+            </Jumbotron>
+            <Link to="/events">← Back to Events</Link>
+        
+            <div className="container">
+          <Row>
+           <Col size="md-5"> 
+              
+             <h4> <strong id="tag">Description: </strong> {this.state.event.description}</h4>
+             <h4> <strong id="tag">Mountain: </strong> {this.state.event.fourtennerSelected}</h4>
+             <h4> <strong id="tag">Time/ Date:</strong> {this.state.event.date} at  {this.state.event.time}</h4>
+        
+          <h4> <strong id="tag">Contact Info: </strong> {this.state.event.organizer}</h4>
+          <h4> <strong id="tag">Phone/Email: </strong> {this.state.event.contactInfo}</h4>
+          <h4> <strong id="tag">Meeting Point: </strong> {this.state.event.meetingPoint}</h4>  
+          </Col>
+          <Col size="md-5"> 
+              <ThumbnailCustom key={this.state.event._id}>
+                    <img src={this.state.event.url} alt=""/>
+               </ThumbnailCustom>
+            </Col>
+          </Row>
+       </div>
+   </Col>
+      </Row>
+ </Container>
     );
   }
 }

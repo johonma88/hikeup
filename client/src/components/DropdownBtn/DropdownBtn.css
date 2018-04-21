@@ -20,3 +20,6 @@
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
 }
+#mountainsBtn {
+    background-color: lightgray;
+}

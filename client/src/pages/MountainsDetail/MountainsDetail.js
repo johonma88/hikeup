@@ -27,14 +27,13 @@ class MountainsDetail extends Component {
         </Col>
           <Col size="md-8">
             <Jumbotron>
-              <h1>
+              <h3>
                 Mountain Range: {this.state.mountain.mtranges} <br  />
                 Fourteener: {this.state.mountain.fourteeners} 
-              </h1>
+              </h3>
             </Jumbotron>
 
-            <div class="row">
-            <div class="col-sm-6 col-md-4">
+           
                <div class="thumbnail">
                <ThumbnailCustom key={this.state.mountain._id}>
                 <img src={this.state.mountain.picture} alt=""/>
@@ -50,12 +49,7 @@ class MountainsDetail extends Component {
                     <Link to="/mtsinfo">← Back to Mountain List</Link>
               </div>
               </div>
-              </div>
-        </div>
-
-            {/* <ThumbnailCustom key={this.state.mountain._id}>
-                <img src={this.state.mountain.picture} alt=""/>
-            </ThumbnailCustom> */}
+    
 
             <Row>
           <Col size="md-10 md-offset-1">
