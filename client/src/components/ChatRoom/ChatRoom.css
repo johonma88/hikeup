@@ -16,9 +16,9 @@
     height: 50vh;
     width: 30rem;
     background-color: #ffffffc4;
+    /* font-family: monospace; */
     padding: 2rem;
-    overflow: auto;
-    overflow-wrap: break-word;
+    overflow: scroll;
     font-size: 15px; 
     color: maroon;
     border-style: solid;
@@ -38,10 +38,5 @@
 
 #chatGlyphicon{
  color: maroon;
-}
-
-.list-group-item-heading hr {
-    border-color: lightgray;
-    margin: 0;
 }
 
