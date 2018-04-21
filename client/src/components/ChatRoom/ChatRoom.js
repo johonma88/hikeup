@@ -74,13 +74,13 @@ submitMessage(event){
       {authUser =>
        <div className="panel" id="chatPanel" >
           <div className="panel-heading">
-              {/* <h3 className="panel-title">Hike Up Chat</h3> */}
-              <h3 className="panel-title">Hike Up Chat {authUser.email}</h3>
+              <h3 className="panel-title">Hike Up Chat</h3>
+              {/* <h3 className="panel-title">Hike Up Chat {authUser.email}</h3> */}
           </div>
           <div className="panel-body"  id="chatContainer">
         
-        <p>{authUser.email}: {currentMessage}</p> <br />
-             
+        {/* <p>{authUser.email}: {currentMessage}</p> <br /> */}
+        <p> {currentMessage}</p> <br />
           </div>
           <div className="panel-footer">
                <input onChange={this.updateMessage} type="text" placeholder="message" id="chatMessage"/>
