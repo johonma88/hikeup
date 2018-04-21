@@ -64,13 +64,6 @@ class Mountains extends Component {
     }
   };
 
-  showModal = () => {
-    this.setState({
-      ...this.state,
-      show: !this.state.show
-    });
-  }
-
   render() {
     return (
       <Container fluid>
@@ -81,13 +74,7 @@ class Mountains extends Component {
           <Col size="md-8">
             <Jumbotron>
               <h1>14ers List</h1>
-            </Jumbotron>
-
-            <input type="button"
-                  onClick={this.showModal}
-                   value="Show Modal" />
-
-            
+            </Jumbotron>     
 
             {this.state.mtsinfo.length ? (
               <List>
