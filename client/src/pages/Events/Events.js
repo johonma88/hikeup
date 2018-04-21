@@ -111,20 +111,12 @@ class Events extends Component {
       <Container fluid>
         <Row>
         <Col size="md-3">
-<<<<<<< HEAD
-            <Row>
-            {/* <Col size="md-3"> */}
-           <SideMenu /><br /><br /><br /><br /><br /><br /><br /><br />
-           {/* </Col> */}
-           </Row> 
-=======
               <Row>
             
             <SideMenu /><br /><br /><br /><br /><br /><br /><br /><br />
           
             </Row>
          
->>>>>>> af4d9c5a72880332997d716a8a59e0d51d8f85c4
         </Col>
 
           <Col size="md-8">
@@ -132,11 +124,6 @@ class Events extends Component {
               <h1 className="center">Events</h1>
 
             </Jumbotron>
-<<<<<<< HEAD
-          
-=======
-
->>>>>>> af4d9c5a72880332997d716a8a59e0d51d8f85c4
           <Row>
             {this.state.events.length ? (
               <List>
