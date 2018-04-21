@@ -7,6 +7,7 @@ import { List, ListItem } from "../../components/List";
 import "../../components/DropdownBtn/DropdownBtn.css";
 import SideMenu from  "../../components/SideMenu";
 import Modal from  "../../components/Modal/Modal";
+import ThumbnailCustom from "../../components/ThumbnailCustom";
 
 
 
@@ -100,10 +101,18 @@ class Mountains extends Component {
                         14ner: {mtinfo.fourteeners} <br />
                       </strong>
                       <Link to={"/mtsinfo/" + mtinfo._id}>More Details
+                     
                       <Modal 
+                         key={mtinfo._id}
                         onClose={this.showModal}
                         show={this.state.show}>
-                          This is a modal
+                             <ThumbnailCustom key={mtinfo._id}>
+                            <img src={mtinfo.picture} alt=""/>
+                        </ThumbnailCustom>
+                          <strong>
+                        Mountain Range: {mtinfo.mtranges} <br /> 
+                        14ner: {mtinfo.fourteeners} <br />
+                      </strong>
             
 
            
