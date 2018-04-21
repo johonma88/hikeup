@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import * as firebase from 'firebase';
 import "./ChatRoom.css";
 
-
+import AuthUserContext from '../Session/AuthUserContext';
+import WithAuthentication from '../Session/withAuthentication';
 
 
 class ChatRoom extends Component {
@@ -13,7 +14,8 @@ constructor (props, context) {
   this.submitMessage = this.submitMessage.bind(this)
     this.state = {
       message: '',
-      messages: []
+      messages: [],
+      user: ""
   }
 }
 
@@ -21,16 +23,18 @@ componentDidMount(){
     console.log('componentDidMount')
  
     firebase.database().ref('messages/').on('value', (snapshot)=> {
-      
+ 
       const currentMessages = snapshot.val()
 
         if (currentMessages != null) {
           this.setState({
+          
             messages: currentMessages
           })
         }
     })
 }
+
 
 updateMessage(event){
   console.log('updateMessage:'+event.target.value)
@@ -56,7 +60,9 @@ submitMessage(event){
 
     const currentMessage = this.state.messages.map((message, i) => {
       return (
-        <h4 class="list-group-item-heading" key={message.id}>{message.text}</h4>
+    
+        
+         <p class="list-group-item-heading" key={message.id}>{message.text}</p>
       )
     })
 
@@ -64,39 +70,25 @@ submitMessage(event){
     
 
     return (
-
-    // <div>
-    //    <h3 id="chatHeader"> Hike Up Chat </h3>
-    //   <div id="chatContainer">
-      
-    //    <div className="list-group shadow" id="chatBody">
-            
-    //            <p>{currentMessage}</p> <br />
-              
-              
-    //         </div>
-    //       </div>
-    //       {/* <div className="input-group input-group-lg"> */}
-    //            <input onChange={this.updateMessage} type="text" placeholder="message" />
-    //            <button onClick={this.submitMessage}><span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
-    //            {/* </div> */}
-    //   </div>
-       
-
-
+      <AuthUserContext.Consumer>
+      {authUser =>
        <div className="panel" id="chatPanel" >
-       <div className="panel-heading">
-         <h3 className="panel-title">Hike Up Chat</h3>
-       </div>
-       <div className="panel-body"  id="chatContainer">
-       <p>{currentMessage}</p> <br />
-       </div>
-       <div className="panel-footer">
-       <input onChange={this.updateMessage} type="text" placeholder="message" />
-               <button onClick={this.submitMessage}><span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
-       </div>
+          <div className="panel-heading">
+              {/* <h3 className="panel-title">Hike Up Chat</h3> */}
+              <h3 className="panel-title">Hike Up Chat {authUser.email}</h3>
+          </div>
+          <div className="panel-body"  id="chatContainer">
+        
+        <p>{authUser.email}: {currentMessage}</p> <br />
+             
+          </div>
+          <div className="panel-footer">
+               <input onChange={this.updateMessage} type="text" placeholder="message" id="chatMessage"/>
+                <button onClick={this.submitMessage}><span class="glyphicon glyphicon-play" aria-hidden="true" id="chatGlyphicon"></span></button>
+          </div>
      </div>
-
+      }
+      </AuthUserContext.Consumer>
     
     );
   }
