@@ -3,7 +3,7 @@ import * as firebase from 'firebase';
 import "./ChatRoom.css";
 
 import AuthUserContext from '../Session/AuthUserContext';
-import WithAuthentication from '../Session/withAuthentication';
+// import WithAuthentication from '../Session/withAuthentication';
 
 
 class ChatRoom extends Component {
@@ -12,12 +12,15 @@ constructor (props, context) {
   super(props, context)
   this.updateMessage = this.updateMessage.bind(this)
   this.submitMessage = this.submitMessage.bind(this)
-    this.state = {
+    
+  this.state = {
       message: '',
       messages: [],
       user: ""
   }
+  
 }
+
 
 componentDidMount(){
     console.log('componentDidMount')
@@ -37,13 +40,18 @@ componentDidMount(){
 
 
 updateMessage(event){
-  console.log('updateMessage:'+event.target.value)
+  // console.log('updateMessage:'+event.target.value)
   this.setState({
     message: event.target.value
   })
 }
 
 submitMessage(event){
+
+  // if (this.state.message === null || this.state.message === "") {
+  //   return alert('Empty Value');
+  // }
+  
   console.log('submitMessage: '+this.state.message)
 
   const nextMessage = {
@@ -51,7 +59,12 @@ submitMessage(event){
       text: this.state.message
     }
 
-    firebase.database().ref('messages/'+nextMessage.id).set(nextMessage)
+    firebase.database().ref('messages/'+nextMessage.id).set(nextMessage) 
+    document.getElementById('chatContainer').scrollTop = 9999999;
+
+  event.preventDefault();
+  document.getElementById("message-form").reset();
+  this.state.message = '';
 
 }
 
@@ -59,10 +72,10 @@ submitMessage(event){
   render() {
 
     const currentMessage = this.state.messages.map((message, i) => {
-      return (
-    
-        
-         <p class="list-group-item-heading" key={message.id}>{message.text}</p>
+      return (    
+         <p class="list-group-item-heading" key={message.id}>
+            {message.text} <span><hr/></span>  
+          </p> 
       )
     })
 
@@ -84,8 +97,13 @@ submitMessage(event){
 
           </div>
           <div className="panel-footer">
+        
+          <form id="message-form">
                <input onChange={this.updateMessage} type="text" placeholder="message" id="chatMessage"/>
-                <button onClick={this.submitMessage}><span class="glyphicon glyphicon-play" aria-hidden="true" id="chatGlyphicon"></span></button>
+
+                <button disabled={!this.state.message} onClick={this.submitMessage}><span class="glyphicon glyphicon-play" aria-hidden="true" id="chatGlyphicon"></span></button>
+          </form>
+          
           </div>
      </div>
       }
