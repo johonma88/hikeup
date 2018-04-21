@@ -9,6 +9,7 @@ import SideMenu from  "../../components/SideMenu";
 import Modal from  "../../components/Modal/Modal";
 
 
+
 class Mountains extends Component {
 
   state = {
@@ -102,7 +103,11 @@ class Mountains extends Component {
                       <Modal 
                         onClose={this.showModal}
                         show={this.state.show}>
-                        This message is from Modal!
+                          This is a modal
+            
+
+           
+               
                       </Modal>
                     </Link>
                   </ListItem>
