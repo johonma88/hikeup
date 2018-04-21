@@ -98,13 +98,11 @@ class Mountains extends Component {
                         Mountain Range: {mtinfo.mtranges} <br /> 
                         14ner: {mtinfo.fourteeners} <br />
                       </strong>
-                      <Link to={"/mtsinfo/" + mtinfo._id}>More Details
-                      <Modal 
-                        onClose={this.showModal}
-                        show={this.state.show}>
-                        This message is from Modal!
-                      </Modal>
-                    </Link>
+                      {/* <Link to={"/mtsinfo/" + mtinfo._id}>More Details </Link> */}
+                 
+                
+                    <Modal id={mtinfo._id} />
+                  
                   </ListItem>
                 ))}
               </List>
