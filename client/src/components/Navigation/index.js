@@ -27,33 +27,16 @@ const NavigationAuth = () =>
     <div class="navbar-header">
       <a class="navbar-logo left" href="/"><img className="logo" alt="Mountain Logo" src= { require('./mountains-logo.png') } /></a>
     </div>
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav">
 
-<<<<<<< HEAD
       <li><a href="/">Home</a></li>
 
       <li><a href="account">Account</a></li>
       <li><a href="events">HikeUp Events</a></li>
       <li><a href="create-events">Create HikeUp</a></li>
       <li><a href="mtsinfo">Mountains</a></li>
-=======
-      {/* <li class="active"><a href="/">Home</a></li> */}
-
-      {/* <li><a href="/">Home</a></li> */}
-  
-      <li>
-    <a href="account">  <i className="glyphicon glyphicon-user"></i>Account</a>
-    </li>
-  
-      {/* <li><a href="events">HikeUp Events</a></li>
-      <li><a href="create-events">Create HikeUp</a></li>
-      <li><a href="mtsinfo">Mountains</a></li> */}
-      {/* <li><a href="/chatpage">Chat</a></li> */}
-      <SignOutButton />
->>>>>>> 1ad416f42246579b46a72358cd897526ea1b1ffd
     </ul>
-
-  
+    <SignOutButton />
   </div>
 </nav>
 
