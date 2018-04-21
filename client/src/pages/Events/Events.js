@@ -115,15 +115,15 @@ class Events extends Component {
             {/* <Col size="md-3"> */}
            <SideMenu /><br /><br /><br /><br /><br /><br /><br /><br />
            {/* </Col> */}
-           </Row>
-         
+           </Row> 
         </Col>
+
           <Col size="md-8">
             <Jumbotron className="shadow">
               <h1 className="center">Events</h1>
 
             </Jumbotron>
-          </Row>
+          
           <Row>
             {this.state.events.length ? (
               <List>
