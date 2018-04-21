@@ -7,6 +7,7 @@ import DropdownBtn from "../../components/DropdownBtn";
 import "../../components/DropdownBtn/DropdownBtn.css";
 import SideMenu from  "../../components/SideMenu";
 import "./CreateEvents.css";
+import AuthUserContext from '../../components/Session/AuthUserContext';
 
 class CreateEvents extends Component {
 

@@ -6,6 +6,7 @@ import API from "../../utils/API";
 import ThumbnailCustom from "../../components/ThumbnailCustom";
 import SideMenu from  "../../components/SideMenu";
 
+
 class MountainsDetail extends Component {
   state = {
     mountain: {}

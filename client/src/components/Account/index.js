@@ -15,16 +15,17 @@ const AccountPage = () =>
 
               <Container fluid>
       <Row>
-      <Col size="md-2">
+      <Col size="md-3">
     <SideMenu />
       </Col>
-        <Col size="md-10">
+        <Col size="md-8">
           <Jumbotron>
             
             <h1 className="text-center">Reset Your Password</h1>
           </Jumbotron>
           <div className="container-fluid">
             <h5>Change Password: {authUser.email}</h5>
+            
             <PasswordChangeForm />
           </div>
        

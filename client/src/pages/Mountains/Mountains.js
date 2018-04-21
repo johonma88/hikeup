@@ -8,6 +8,7 @@ import "../../components/DropdownBtn/DropdownBtn.css";
 import SideMenu from  "../../components/SideMenu";
 import Modal from  "../../components/Modal/Modal";
 
+
 class Mountains extends Component {
 
   state = {
