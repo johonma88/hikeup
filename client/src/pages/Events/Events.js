@@ -112,19 +112,12 @@ class Events extends Component {
       <Container fluid>
         <Row>
         <Col size="md-3">
-
-            <Row>
-            {/* <Col size="md-3"> */}
-           <SideMenu /><br /><br /><br /><br /><br /><br /><br /><br />
-           {/* </Col> */}
-           </Row> 
-
               <Row>
             
             <SideMenu /><br /><br /><br /><br /><br /><br /><br /><br />
           
             </Row>
-
+         
         </Col>
 
           <Col size="md-8">
@@ -132,7 +125,7 @@ class Events extends Component {
               <h1 className="center">Events</h1>
 
             </Jumbotron>
-         <Row>
+          <Row>
             {this.state.events.length ? (
               <List>
                 {this.state.events.map(event => (
