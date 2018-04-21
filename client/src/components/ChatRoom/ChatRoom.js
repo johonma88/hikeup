@@ -81,6 +81,7 @@ submitMessage(event){
         
         {/* <p>{authUser.email}: {currentMessage}</p> <br /> */}
         <p> {currentMessage}</p> <br />
+
           </div>
           <div className="panel-footer">
                <input onChange={this.updateMessage} type="text" placeholder="message" id="chatMessage"/>

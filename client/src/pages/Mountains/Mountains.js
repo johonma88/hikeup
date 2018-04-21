@@ -10,6 +10,7 @@ import Modal from  "../../components/Modal/Modal";
 import ThumbnailCustom from "../../components/ThumbnailCustom";
 
 
+
 class Mountains extends Component {
 
   state = {
@@ -104,7 +105,7 @@ class Mountains extends Component {
                         onClose={this.showModal}
                         show={this.state.show}>
                       <div class="thumbnail">
-               <ThumbnailCustom key={this.state.mountain._id}>
+               <ThumbnailCustom key={mtinfo._id}>
                 <img src={mtinfo.picture} alt=""/>
             </ThumbnailCustom>
             <hr/>
@@ -113,7 +114,7 @@ class Mountains extends Component {
                     <p>Mountain Range: {mtinfo.mtranges}</p>
                     <p>Fourteener: {mtinfo.fourteeners}</p>
                     <p>Elevation: {mtinfo.elevation}</p>
-                    <p>Latitude: {mtinfo.lat} Longitude: {this.state.mountain.lon}</p>
+                    <p>Latitude: {mtinfo.lat} Longitude: {mtinfo.lon}</p>
                     <p>Weather:  <a href={mtinfo.weather}  target="_blank">Click here to check the weather </a></p>
                     {/* <Link to="/mtsinfo">← Back to Mountain List</Link> */}
               </div>
