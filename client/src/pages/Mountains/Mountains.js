@@ -8,6 +8,7 @@ import "../../components/DropdownBtn/DropdownBtn.css";
 import SideMenu from  "../../components/SideMenu";
 import Modal from  "../../components/Modal/Modal";
 
+import "./Mountains.css";
 
 class Mountains extends Component {
 
@@ -72,9 +73,13 @@ class Mountains extends Component {
       <SideMenu />
         </Col>
           <Col size="md-8">
-            <Jumbotron>
-              <h1>14ers List</h1>
-            </Jumbotron>     
+       
+            <Jumbotron >
+        
+                <h1>14ers List</h1>
+              </Jumbotron>  
+       
+            <div id="list">
 
             {this.state.mtsinfo.length ? (
               <List>
@@ -96,6 +101,7 @@ class Mountains extends Component {
             ) : (
               <h3>No Results to Display</h3>
             )}
+            </div>
           </Col>
         </Row>
       </Container>
