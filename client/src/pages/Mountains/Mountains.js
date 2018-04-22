@@ -7,8 +7,6 @@ import { List, ListItem } from "../../components/List";
 import "../../components/DropdownBtn/DropdownBtn.css";
 import SideMenu from  "../../components/SideMenu";
 import Modal from  "../../components/Modal/Modal";
-import ThumbnailCustom from "../../components/ThumbnailCustom";
-
 
 
 class Mountains extends Component {
@@ -21,8 +19,7 @@ class Mountains extends Component {
     lat: "",
     lon: "",
     weather: "",
-    show: false,
-    mountain: {}
+    show: false
   };
 
 
@@ -37,7 +34,6 @@ class Mountains extends Component {
       )
       .catch(err => console.log(err));
   };
-  
 
   deleteMtInfo = id => {
     API.deleteMtInfo(id)
@@ -68,13 +64,6 @@ class Mountains extends Component {
     }
   };
 
-  showModal = () => {
-    this.setState({
-      ...this.state,
-      show: !this.state.show
-    });
-  }
-
   render() {
     return (
       <Container fluid>
@@ -85,29 +74,24 @@ class Mountains extends Component {
           <Col size="md-8">
             <Jumbotron>
               <h1>14ers List</h1>
-            </Jumbotron>
+            </Jumbotron>     
 
             {this.state.mtsinfo.length ? (
               <List>
-                
                 {this.state.mtsinfo.map(mtinfo => (
-                
                   <ListItem key={mtinfo._id}>
                    
                       <strong>
                         Mountain Range: {mtinfo.mtranges} <br /> 
                         14ner: {mtinfo.fourteeners} <br />
                       </strong>
-                     
                       {/* <Link to={"/mtsinfo/" + mtinfo._id}>More Details </Link> */}
-               
-                      <div id="modalButton">
+                 
+                
                     <Modal id={mtinfo._id} />
-                 </div>
+                  
                   </ListItem>
-                    
                 ))}
-               
               </List>
             ) : (
               <h3>No Results to Display</h3>

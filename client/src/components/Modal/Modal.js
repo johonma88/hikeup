@@ -4,7 +4,6 @@ import 'react-responsive-modal/lib/react-responsive-modal.css';
 import Modal from 'react-responsive-modal/lib/css';
 import API from "../../utils/API";
 import ThumbnailCustom from "../../components/ThumbnailCustom";
-import "./Modal.css";
 
 export default class App extends React.Component {
   state = {
@@ -29,7 +28,7 @@ export default class App extends React.Component {
     const { open } = this.state;
     return (
       <div className="example">
-        <button className="btn btn-action" onClick={this.onOpenModal} id="modalButton">
+        <button className="btn btn-action" onClick={this.onOpenModal}>
           More Details ->
         </button>{' '}
       
