@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import * as firebase from 'firebase';
 import "./ChatRoom.css";
 
-import AuthUserContext from '../Session/AuthUserContext';
-import WithAuthentication from '../Session/withAuthentication';
+// import AuthUserContext from '../Session/AuthUserContext';
+// import WithAuthentication from '../Session/withAuthentication';
 
 
 class ChatRoom extends Component {
@@ -37,14 +37,14 @@ componentDidMount(){
 
 
 updateMessage(event){
-  console.log('updateMessage:'+event.target.value)
+  // console.log('updateMessage:'+event.target.value)
   this.setState({
     message: event.target.value
   })
 }
 
 submitMessage(event){
-  console.log('submitMessage: '+this.state.message)
+  // console.log('submitMessage: '+this.state.message)
 
   const nextMessage = {
       id: this.state.messages.length,
@@ -52,7 +52,11 @@ submitMessage(event){
     }
 
     firebase.database().ref('messages/'+nextMessage.id).set(nextMessage)
+    document.getElementById('chatContainer').scrollTop = 9999999;
 
+  event.preventDefault();
+  document.getElementById("message-form").reset();
+  this.state.message = '';
 }
 
 
@@ -60,18 +64,13 @@ submitMessage(event){
 
     const currentMessage = this.state.messages.map((message, i) => {
       return (
-    
-        
-         <p class="list-group-item-heading" key={message.id}>{message.text}</p>
+         <p class="list-group-item-heading" key={message.id}>{message.text}
+         <span><hr/></span></p>
       )
     })
 
-   
-    
-
     return (
-      <AuthUserContext.Consumer>
-      {authUser =>
+
        <div className="panel" id="chatPanel" >
           <div className="panel-heading">
               <h3 className="panel-title">Hike Up Chat</h3>
@@ -84,16 +83,20 @@ submitMessage(event){
 
           </div>
           <div className="panel-footer">
+            <form id="message-form">
                <input onChange={this.updateMessage} type="text" placeholder="message" id="chatMessage"/>
-                <button onClick={this.submitMessage}><span class="glyphicon glyphicon-play" aria-hidden="true" id="chatGlyphicon"></span></button>
+               <button disabled={!this.state.message} 
+                       onClick={this.submitMessage}>
+                       <span class="glyphicon glyphicon-play" aria-hidden="true" id="chatGlyphicon"></span>
+                       </button>
+            </form>          
           </div>
      </div>
-      }
-      </AuthUserContext.Consumer>
+      
     
     );
-  }
+  
 }
 
-
+}
 export default ChatRoom;
