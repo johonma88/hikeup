@@ -2,7 +2,6 @@ import React from 'react';
 import Jumbotron from "../../components/Jumbotron";
 import { Col, Row, Container } from "../../components/Grid";
 import SideMenu from  "../../components/SideMenu";
-import "../../Main.css";
 
 import AuthUserContext from '../Session/AuthUserContext';
 import PasswordChangeForm from '../PasswordChange';
