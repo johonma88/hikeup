@@ -1,3 +1,10 @@
 #p-mountains {
     color: #337ab7;
 }
+#mountainJumbotron{
+    background-image: url('https://www.14ers.com/photos/mtelbert/201008_Elb360.jpg');
+}
+#list{
+    overflow: scroll;
+    height: 700px;
+}

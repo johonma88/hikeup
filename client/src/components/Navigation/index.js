@@ -29,18 +29,12 @@ const NavigationAuth = () =>
     </div>
     <ul class="nav navbar-nav navbar-right">
 
-      {/* <li class="active"><a href="/">Home</a></li> */}
-
-      {/* <li><a href="/">Home</a></li> */}
+     
   
       <li>
     <a href="account">  <i className="glyphicon glyphicon-user"></i>Account</a>
     </li>
-  
-      {/* <li><a href="events">HikeUp Events</a></li>
-      <li><a href="create-events">Create HikeUp</a></li>
-      <li><a href="mtsinfo">Mountains</a></li> */}
-      {/* <li><a href="/chatpage">Chat</a></li> */}
+
       <SignOutButton />
     </ul>
 

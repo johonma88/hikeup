@@ -39,9 +39,7 @@ const AppAuth = () => (
         <Route exact path="/signup" component={SignUpPage} />
         <Route exact path="/signin" component={SignInPage} />
         <Route exact path="/pw-forget" component={PasswordForgetPage} />
-        {/* <Route exact path="/home" component={HomePage} /> */}
         <Route exact path="/account" component={AccountPage} />
-
         <Route exact path="/events" component={Events} />
         <Route exact path="/create-events" component={CreateEvents} />
         <Route exact path="/events/:id" component={Detail} />
@@ -64,7 +62,7 @@ const AppNonAuth = () => (
       <Route exact path="/signin" component={SignInPage} />
       <Route exact path="/pw-forget" component={PasswordForgetPage} />
       {/* <Route exact path="/home" component={HomePage} /> */}
-      <Route exact path="/account" component={AccountPage} />
+      {/* <Route exact path="/account" component={AccountPage} /> */}
 
       <Route component={NoMatch} />
     </Switch>
