@@ -1,0 +1,11 @@
+.shadow {
+    -webkit-box-shadow: 2px 4px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    2px 4px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         2px 4px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.text {
+    font-family: 'Gugi', cursive;
+    text-align: center;
+    background-color: lightblue;
+}
