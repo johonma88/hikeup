@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import * as firebase from 'firebase';
 import "./ChatRoom.css";
 
-// import AuthUserContext from '../Session/AuthUserContext';
-// import WithAuthentication from '../Session/withAuthentication';
+import AuthUserContext from '../Session/AuthUserContext';
+import WithAuthentication from '../Session/withAuthentication';
 
 
 class ChatRoom extends Component {
