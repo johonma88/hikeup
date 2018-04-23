@@ -5,15 +5,14 @@ import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import ThumbnailCustom from "../../components/ThumbnailCustom";
 import SideMenu from  "../../components/SideMenu";
-import Modal from  "../../components/Modal/Modal";
+// import Modal from  "../../components/Modal/Modal";
 
 
 class MountainsDetail extends Component {
   state = {
     mountain: {}
   };
-  // When this component mounts, grab the mountain with the _id of this.props.match.params.id
-  // e.g. localhost:3000/mountains/599dcb67f0f16317844583fc
+
   componentDidMount() {
     API.getMtInfo(this.props.match.params.id)
       .then(res => this.setState({ mountain: res.data }))

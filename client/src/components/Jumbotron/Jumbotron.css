@@ -1,3 +1,7 @@
+.jumbotron {
+
+}
+
 .shadow {
     -webkit-box-shadow: 2px 4px 5px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:    2px 4px 5px 0px rgba(50, 50, 50, 0.75);
@@ -7,5 +11,11 @@
 .text {
     font-family: 'Gugi', cursive;
     text-align: center;
+    color: lightblue;
     background-color: lightblue;
+    background: url("https://www.14ers.com/photos/maroongroup/200607_Maro360.jpg") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
