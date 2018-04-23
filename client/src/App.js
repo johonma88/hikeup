@@ -17,7 +17,7 @@ import LandingPage from './components/Landing';
 import SignUpPage from './components/SignUp';
 import SignInPage from './components/SignIn';
 import PasswordForgetPage from './components/PasswordForget';
-import HomePage from './components/Home';
+// import HomePage from './components/Home';
 import AccountPage from './components/Account';
 import withAuthentication from './components/Session/withAuthentication';
 import AuthUserContext from './components/Session/AuthUserContext';
@@ -66,6 +66,6 @@ const AppNonAuth = () => (
   </div>
 </Router>
 );
-// export default App;
 
+// export default App;
 export default withAuthentication(App);

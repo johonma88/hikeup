@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ChatRoom from "../../components/ChatRoom";
 import "../../components/DropdownBtn/DropdownBtn.css";
-import AuthUserContext from '../../components/Session/AuthUserContext';
+// import AuthUserContext from '../../components/Session/AuthUserContext';
 
 class ChatPage extends Component {
 
