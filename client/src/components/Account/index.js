@@ -1,4 +1,6 @@
 import React from 'react';
+import "./index.css";
+
 import Jumbotron from "../../components/Jumbotron";
 import { Col, Row, Container } from "../../components/Grid";
 import SideMenu from  "../../components/SideMenu";
@@ -17,20 +19,18 @@ const AccountPage = () =>
       <Col size="md-3">
     <SideMenu />
       </Col>
-        <Col size="md-8">
+        <Col size="md-8" className="center">
           <Jumbotron>
-            
             <h1 className="text-center">Reset Your Password</h1>
           </Jumbotron>
-          <div className="container-fluid">
-            <h5>Change Password: {authUser.email}</h5>
-            
+
+          <div className="container-fluid block">
+            <h5>Change Password: <i class="glyphicon glyphicon-user"></i> <span> {authUser.email} </span></h5>
             <PasswordChangeForm />
           </div>
        
-
-              </Col>
-        </Row>
+        </Col>
+      </Row>
       </Container>
 
       </div>
