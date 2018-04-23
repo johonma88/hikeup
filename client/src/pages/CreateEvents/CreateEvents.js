@@ -7,7 +7,7 @@ import DropdownBtn from "../../components/DropdownBtn";
 import "../../components/DropdownBtn/DropdownBtn.css";
 import SideMenu from  "../../components/SideMenu";
 import "./CreateEvents.css";
-import AuthUserContext from '../../components/Session/AuthUserContext';
+// import AuthUserContext from '../../components/Session/AuthUserContext';
 
 class CreateEvents extends Component {
 
@@ -147,7 +147,7 @@ class CreateEvents extends Component {
                 value={this.state.description}
                 onChange={this.handleInputChange}
                 name="description"
-                placeholder="description (required)"
+                placeholder="Description (required)"
               />
               <DropdownBtn 
                id="inputEvent"
@@ -161,7 +161,7 @@ class CreateEvents extends Component {
                 value={this.state.date}
                 onChange={this.handleInputChange}
                 name="date"
-                placeholder="date (required)"
+                placeholder="Date (required)"
               />
                What time are you planning to meet:
                <Input type="time"
@@ -169,7 +169,7 @@ class CreateEvents extends Component {
                 value={this.state.time}
                 onChange={this.handleInputChange}
                 name="time"
-                placeholder="time (required)"
+                placeholder="Time (required)"
               />
                Where is your meeting point for this event: 
               <Input
@@ -177,7 +177,7 @@ class CreateEvents extends Component {
                 value={this.state.meetingPoint}
                 onChange={this.handleInputChange}
                 name="meetingPoint"
-                placeholder="meetingPoint (required)"
+                placeholder="Meeting Point (required)"
               />
               URL of a picture for your event: 
                 <Input
