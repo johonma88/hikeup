@@ -10,7 +10,6 @@ import * as routes from '../../constants/routes';
 
 const SignUpPage = ({ history }) =>
   <div>
-    <h1>SignUp</h1>
     <SignUpForm history={history} />
   </div>
 
@@ -81,37 +80,37 @@ class SignUpForm extends Component {
       email === '';
 
     return (
-      <div className="panel panel-default" >
+      <div className="panel panel-default signForm" >
       <div className="panel-heading" id="signInTitle">
-      <h3>Create an HikeUp Account</h3>
+      <h2>Create a HikeUp Account</h2>
       </div>
       <div className="panel-body">
       <form onSubmit={this.onSubmit}>
-       Full Name: <input
+       Full Name:<br /> <input
           value={username}
           onChange={event => this.setState(updateByPropertyName('username', event.target.value))}
           type="text"
           placeholder="Full Name"
         /><br />
-        Email: <input
+        Email:<br /> <input
           value={email}
           onChange={event => this.setState(updateByPropertyName('email', event.target.value))}
           type="text"
           placeholder="Email Address"
         /> <br />
-        Password: <input
+        Password:<br /> <input
           value={passwordOne}
           onChange={event => this.setState(updateByPropertyName('passwordOne', event.target.value))}
           type="password"
           placeholder="Password"
         /> <br />
-        Retype your password: <input
+        Retype your password:<br /> <input
           value={passwordTwo}
           onChange={event => this.setState(updateByPropertyName('passwordTwo', event.target.value))}
           type="password"
           placeholder="Confirm Password"
         /> <br />
-        <button disabled={isInvalid} type="submit">
+        <button className="button-signup" disabled={isInvalid} type="submit">
           Sign Up
         </button>
       
