@@ -3,26 +3,27 @@
 }
 
 .pf {
-    margin: 0% 30% 2% 30%;
+    margin: 0% 23% 2% 23%;
     border: 2px solid black;
     background-color: lightblue;
-    padding: 0% 2% 2% 2%;
+    padding: 0% 4% 2% 4%;
 }
 
 .heading-pf {
     font-family: 'Gugi', cursive;
+    font-size: 300%
 }
 
 .pic-pf {
-    width: 40%;
+    width: 54%;
     margin-top: 2%;
     border: 2px solid black;
 }
 
 .input-pf {
+    width: 155px;
     font-family: 'Gugi', cursive;
     border: 1px solid black;
-    margin-right: 5px;
 }
 
 .button-custom {

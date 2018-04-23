@@ -6,15 +6,17 @@ import * as routes from '../../constants/routes';
 import "./index.css";
 
 const PasswordForgetPage = () =>
-  <div>
+  <div className="container-fluid">
 
     <div className="center">
      <img  className="pic-pf" src="https://cdn.zmescience.com/wp-content/uploads/2017/05/Mount_Everest_as_seen_from_Drukair2_PLW_edit.jpg" alt="Mt Everest"/>
     </div>
 
     <div className="pf center">
-      <h1 className="heading-pf">Password Forget Reset</h1>
-      <PasswordForgetForm />
+      <p className="heading-pf">Password Forget Reset</p>
+      <div>
+        <PasswordForgetForm />
+      </div>
     </div>
 
   </div>
@@ -58,6 +60,7 @@ class PasswordForgetForm extends Component {
     const isInvalid = email === '';
 
     return (
+      <div>
       <form onSubmit={this.onSubmit}>
         <input className="input-pf"
           value={this.state.email}
@@ -71,6 +74,7 @@ class PasswordForgetForm extends Component {
 
         { error && <p>{error.message}</p> }
       </form>
+      </div>
     );
   }
 }
