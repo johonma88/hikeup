@@ -7,8 +7,16 @@ import "./index.css";
 
 const PasswordForgetPage = () =>
   <div>
-    <h1>Password Forget Reset</h1>
-    <PasswordForgetForm />
+
+    <div className="center">
+     <img  className="pic-pf" src="https://cdn.zmescience.com/wp-content/uploads/2017/05/Mount_Everest_as_seen_from_Drukair2_PLW_edit.jpg" alt="Mt Everest"/>
+    </div>
+
+    <div className="pf center">
+      <h1 className="heading-pf">Password Forget Reset</h1>
+      <PasswordForgetForm />
+    </div>
+
   </div>
 
 const updateByPropertyName = (propertyName, value) => () => ({
@@ -51,13 +59,13 @@ class PasswordForgetForm extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <input
+        <input className="input-pf"
           value={this.state.email}
           onChange={event => this.setState(updateByPropertyName('email', event.target.value))}
           type="text"
           placeholder="Email Address"
         />
-        <button disabled={isInvalid} type="submit">
+        <button className="button-custom" disabled={isInvalid} type="submit">
           Reset My Password
         </button>
 
