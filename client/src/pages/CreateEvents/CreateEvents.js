@@ -7,7 +7,6 @@ import DropdownBtn from "../../components/DropdownBtn";
 import "../../components/DropdownBtn/DropdownBtn.css";
 import SideMenu from  "../../components/SideMenu";
 import "./CreateEvents.css";
-// import AuthUserContext from '../../components/Session/AuthUserContext';
 
 class CreateEvents extends Component {
 
@@ -24,7 +23,8 @@ class CreateEvents extends Component {
       time: "",
       organizer: "",
       meetingPoint: "",
-      contactInfo: "",
+      email: "",
+      phone: "",
       url:"",
   
       mountains: [],
@@ -45,7 +45,7 @@ class CreateEvents extends Component {
   loadEvents = () => {
     API.getEvents()
       .then(res =>
-        this.setState({ events: res.data, title: "", description: "", fourteeners: "", date: "", time: "", organizer:"",meetingPoint:"", contactInfo: "", url:"" })
+        this.setState({ events: res.data, title: "", description: "", fourteeners: "", date: "", time: "", organizer:"",meetingPoint:"", phone: "", email: "", url:"" })
       )
       .catch(err => console.log(err));
   };
@@ -66,11 +66,15 @@ class CreateEvents extends Component {
 
   handleInputChange = event => {
     console.log(`
-     DESCIPTION: ${this.state.description}
-     TITLE: ${this.state.title}
+    ORGAINIZED BY: ${this.state.organizer}
+    DESCRIPTION: ${this.state.description}  
+    TITLE: ${this.state.title}
     FOURTEENRSELECTED: ${this.state.fourtennerSelected}
     DATE: ${this.state.date}
     TIME: ${this.state.time}
+    PHONE: ${this.state.phone}
+    EMAIL: ${this.state.email}
+    MEETING POINT: ${this.state.meetingPoint}
     URL: ${this.state.url}
     `);
 
@@ -91,7 +95,8 @@ class CreateEvents extends Component {
     if (this.state.title && this.state.description && this.state.fourtennerSelected && this.state.date && this.state.time) {
       API.saveEvent({
         organizer: this.state.organizer,
-        contactInfo: this.state.contactInfo,
+        phone: this.state.phone,
+        email: this.state.email,
         title: this.state.title,
         description: this.state.description,
         fourtennerSelected: this.state.fourtennerSelected,
@@ -125,13 +130,21 @@ class CreateEvents extends Component {
                 name="organizer"
                 placeholder="Your name goes here (required)"
               /> 
-              Contact Info: (Email/Phone)  
+              Phone:
               <Input
                 id="inputEvent"
-                value={this.state.contactInfo}
+                value={this.state.phone}
                 onChange={this.handleInputChange}
-                name="contactInfo"
-                placeholder="Contact Info (required)"
+                name="phone"
+                placeholder="Phone (required)"
+              />
+              Email:
+              <Input
+                id="inputEvent"
+                value={this.state.email}
+                onChange={this.handleInputChange}
+                name="email"
+                placeholder="Email (required)"
               />
                Title of the Event:
               <Input

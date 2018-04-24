@@ -73,11 +73,12 @@ class Detail extends Component {
          
              <h4> <strong id="tag">Description: </strong> {this.state.event.description}</h4>
              <h4> <strong id="tag">Mountain: </strong> {this.state.event.fourtennerSelected}</h4>
-             <h4> <strong id="tag">Time/ Date:</strong> {moment(this.state.event.date).format("DD-MMM-YYYY")}  at  {this.state.event.time}</h4>
-             {/* <h4> <strong id="tag">Time/ Date:</strong> {this.state.event.date} at  {this.state.event.time}</h4> */}
-          <h4> <strong id="tag">Organizer: </strong> {this.state.event.organizer}</h4>
-          <h4> <strong id="tag">Phone/Email: </strong> {this.state.event.contactInfo}</h4>
-          <h4> <strong id="tag">Meeting Point: </strong> {this.state.event.meetingPoint}</h4>  
+             <h4> <strong id="tag">Date:</strong> {moment(this.state.event.date).format("DD-MMM-YYYY")}</h4>
+             <h4> <strong id="tag">Time: </strong> {this.state.event.time}</h4>
+             <h4> <strong id="tag">Organizer: </strong> {this.state.event.organizer}</h4>
+             <h4> <strong id="tag">Phone: </strong> {this.state.event.phone}</h4>
+             <h4> <strong id="tag">Email: </strong> {this.state.event.email}</h4>
+             <h4> <strong id="tag">Meeting Point: </strong> {this.state.event.meetingPoint}</h4>  
           </Col>
           <Col size="md-5"> 
               <ThumbnailCustom key={this.state.event._id}>
