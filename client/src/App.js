@@ -36,16 +36,16 @@ const AppAuth = () => (
       <Navigation />
        <Switch>
         <Route exact path="/" component={Events} />
-        <Route exact path="/signup" component={SignUpPage} />
-        <Route exact path="/signin" component={SignInPage} />
+        {/* <Route exact path="/signup" component={SignUpPage} /> */}
+        {/* <Route exact path="/signin" component={SignInPage} /> */}
         <Route exact path="/pw-forget" component={PasswordForgetPage} />
         <Route exact path="/account" component={AccountPage} />
         <Route exact path="/events" component={Events} />
         <Route exact path="/create-events" component={CreateEvents} />
         <Route exact path="/events/:id" component={Detail} />
         <Route exact path="/mtsinfo" component={Mountains} />
-        <Route exact path="/mtsinfo/:id" component={MountainsDetail} />
-        <Route exact path="/chatpage" component={ChatPage} />
+        {/* <Route exact path="/mtsinfo/:id" component={MountainsDetail} /> */}
+      
         <Route component={NoMatch} />
       </Switch>
       <Footer />
