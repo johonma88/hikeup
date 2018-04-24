@@ -7,4 +7,9 @@
 #list{
     overflow: scroll;
     height: 700px;
+    margin-bottom: 10%
+}
+
+.mtInf span {
+    font-family: 'Jua', sans-serif;
 }

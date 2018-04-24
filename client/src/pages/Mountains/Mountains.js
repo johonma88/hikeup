@@ -85,16 +85,17 @@ class Mountains extends Component {
               <List>
                 {this.state.mtsinfo.map(mtinfo => (
                   <ListItem key={mtinfo._id}>
-                   
-                      <strong>
-                        Mountain Range: {mtinfo.mtranges} <br /> 
-                        14ner: {mtinfo.fourteeners} <br />
-                      </strong>
-                      {/* <Link to={"/mtsinfo/" + mtinfo._id}>More Details </Link> */}
-                 
+                     
+                    <div class="caption mtInf">
+                      <h4>Mountain Range: </h4>
+                      <h3><span>{mtinfo.mtranges}</span></h3> <br />
+                      <h4> 14ner: </h4> 
+                      <h3><span>{mtinfo.fourteeners}</span></h3> <br />
+                      <p>
+                      <Modal id={mtinfo._id} />
+                      </p>
+                    </div>
                 
-                    <Modal id={mtinfo._id} />
-                  
                   </ListItem>
                 ))}
               </List>

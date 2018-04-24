@@ -110,7 +110,7 @@ class Events extends Component {
     return (
      
       <Container fluid>
-        <Row>
+        <Row >
         <Col size="md-3">
               <Row>
             
