@@ -1,3 +1,7 @@
 #inputEvent{
     background-color: lightgrey;
 }
+
+.createEventForm {
+    margin-bottom: 10%;
+}
