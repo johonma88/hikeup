@@ -3,7 +3,7 @@ import * as firebase from 'firebase';
 import "./ChatRoom.css";
 
 import AuthUserContext from '../Session/AuthUserContext';
-import WithAuthentication from '../Session/withAuthentication';
+// import WithAuthentication from '../Session/withAuthentication';
 
 
 class ChatRoom extends Component {
@@ -36,29 +36,20 @@ componentDidMount(){
     })
 }
 
-
-
-
 authUserCallback(authUser, currentMessage)
 {
-  
-  // this.setState({user: authUser});
-  // console.log(this.state);
-
   function loadMessages() {
-    if(this.state.user === '') {
+    if(this.state.user !== authUser.email) {
       this.setState({
         user: authUser.email
       });
       
     }
-  
-  
     if(this.state.messages && this.state.messages.length > 0)
     {
       return (
       <div>
-        {this.state.messages.map((message, index) => <p className="list-group-item-heading" key={message.id}>{message.user}{message.text}
+        {this.state.messages.map((message, index) => <p className="list-group-item-heading" key={message.id}>{message.user}: <br />{message.text}
                   <span><hr/></span></p>)}
         </div>)
     }
@@ -95,15 +86,12 @@ authUserCallback(authUser, currentMessage)
 } 
 
 updateMessage(event){
-  // console.log('updateMessage:'+event.target.value)
   this.setState({
     message: event.target.value
   })
 }
 
 submitMessage(event){
-  // console.log('submitMessage: '+this.state.message)
-  console.log(this.state);
   const nextMessage = {
       id: this.state.messages.length,
       text: this.state.message,
@@ -115,14 +103,11 @@ submitMessage(event){
 
   event.preventDefault();
   document.getElementById("message-form").reset();
-  // eslint-disable-next-line
-  this.state.message = '';
+  this.state.message = ' ';
+
 }
 
-
-
   render() {
-
 
     return (
       <AuthUserContext.Consumer>
@@ -132,8 +117,6 @@ submitMessage(event){
        </AuthUserContext.Consumer>
     
     );
-  
-}
-
+  }
 }
 export default ChatRoom;
