@@ -34,8 +34,8 @@ export default class App extends React.Component {
         <Modal open={open} onClose={this.onCloseModal} little key={this.state.mountain._id}>
         <div class="thumbnail">
         <ThumbnailCustom key={this.state.mountain._id}>
-         <img src={this.state.mountain.picture} alt=""/>
-     </ThumbnailCustom>
+           <img src={this.state.mountain.picture} alt=""/>
+        </ThumbnailCustom>
      <hr/>
          <div class="caption">
          <h3>Details for {this.state.mountain.mtranges} </h3>
@@ -44,7 +44,6 @@ export default class App extends React.Component {
              <p>Elevation: {this.state.mountain.elevation}</p>
              <p>Latitude: {this.state.mountain.lat} Longitude: {this.state.mountain.lon}</p>
              <p>Weather:  <a href={this.state.mountain.weather}  target="_blank">Click here to check the weather </a></p>
-           
        </div>
        </div>
         </Modal>

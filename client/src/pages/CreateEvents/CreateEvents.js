@@ -112,15 +112,18 @@ class CreateEvents extends Component {
 
   render() {
     return (
+
       <Container fluid>
         <Row>
         <Col size="md-3">
       <SideMenu />
         </Col>
           <Col size="md-8">
+
             <Jumbotron>
               <h1>Create a HikeUp</h1>
             </Jumbotron>
+
             <form className="createEventForm">
            Organized by: 
             <Input
@@ -206,7 +209,9 @@ class CreateEvents extends Component {
               >
                HikeItUp!
               </FormBtn>
+
             </form>
+            
           </Col>
         </Row>
       </Container>

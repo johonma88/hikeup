@@ -9,7 +9,6 @@ import "../../components/DropdownBtn/DropdownBtn.css";
 import SideMenu from  "../../components/SideMenu";
 import './Events.css'
 
-
 class Events extends Component {
 
   constructor(props)
@@ -131,15 +130,6 @@ class Events extends Component {
                 {this.state.events.map(event => (
 
                   <ListItem key={event._id}>
-                      {/* <strong>
-                        {event.title} <br/>
-                        {event.fourtennerSelected} <br/>
-                      </strong>
-                      
-                      <Link to={"/events/" + event._id}>    More Details ->
-                      </Link>
-                    <DeleteBtn onClick={() => this.deleteEvent(event._id)} /> */}
-
 
                     <img src={event.url} alt="Mountain Pic" className="eventPic"/>
                     <div class="caption">
@@ -164,8 +154,6 @@ class Events extends Component {
           </Col>
         </Row>
       </Container>
-
-
     );
   }
 }

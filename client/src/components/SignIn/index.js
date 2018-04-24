@@ -66,7 +66,6 @@ class SignInForm extends Component {
 
     return (
      
-     
       <form class="navbar-form navbar-right" onSubmit={this.onSubmit} id="signin">
 
         <div class="input-group">
@@ -95,16 +94,10 @@ class SignInForm extends Component {
                 disabled={isInvalid}
                 type="submit"
                 class="btn btn-success">Login</button>
-
         
         { error && <p>{error.message}</p> }
         
-  
       </form>
-
-
-
-      
     );
   }
 }
