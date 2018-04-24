@@ -27,7 +27,7 @@ export default class App extends React.Component {
     const { open } = this.state;
     return (
       <div className="example">
-        <button className="btn btn-action" onClick={this.onOpenModal}>
+        <button className="btn btn-success" onClick={this.onOpenModal}>
           More Details ->
         </button>{' '}
       

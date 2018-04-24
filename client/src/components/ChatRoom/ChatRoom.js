@@ -15,26 +15,84 @@ constructor (props, context) {
     this.state = {
       message: '',
       messages: [],
-      user: ""
+      user: ''
   }
+
+  this.authUserCallback = this.authUserCallback.bind(this);
 }
 
 componentDidMount(){
     console.log('componentDidMount')
  
-    firebase.database().ref('messages/').on('value', (snapshot)=> {
+    firebase.database().ref('messages/').on('value', (snapshot) => {
  
       const currentMessages = snapshot.val()
 
         if (currentMessages != null) {
           this.setState({
-          
             messages: currentMessages
           })
         }
     })
 }
 
+
+
+
+authUserCallback(authUser, currentMessage)
+{
+  
+  // this.setState({user: authUser});
+  // console.log(this.state);
+
+  function loadMessages() {
+    if(this.state.user === '') {
+      this.setState({
+        user: authUser.email
+      });
+      
+    }
+  
+  
+    if(this.state.messages && this.state.messages.length > 0)
+    {
+      return (
+      <div>
+        {this.state.messages.map((message, index) => <p className="list-group-item-heading" key={message.id}>{message.user}{message.text}
+                  <span><hr/></span></p>)}
+        </div>)
+    }
+    else
+    {
+      return (<p>No messages.</p>)
+    }
+  };
+  
+
+  return (
+
+<div className="panel" id="chatPanel" >
+  <div className="panel-heading">
+      <h3 className="panel-title">Hike Up Chat {authUser.email}</h3>
+  </div>
+  <div className="panel-body"  id="chatContainer">
+
+{loadMessages.bind(this)()}
+
+  </div>
+  <div className="panel-footer">
+    <form id="message-form">
+       <input onChange={this.updateMessage} type="text" placeholder="message" id="chatMessage"/>
+       <button disabled={!this.state.message} 
+               onClick={this.submitMessage}>
+               <span className="glyphicon glyphicon-play" aria-hidden="true" id="chatGlyphicon"></span>
+        </button>
+    </form>          
+  </div>
+</div>
+
+  )
+} 
 
 updateMessage(event){
   // console.log('updateMessage:'+event.target.value)
@@ -45,10 +103,11 @@ updateMessage(event){
 
 submitMessage(event){
   // console.log('submitMessage: '+this.state.message)
-
+  console.log(this.state);
   const nextMessage = {
       id: this.state.messages.length,
-      text: this.state.message
+      text: this.state.message,
+      user: this.state.user
     }
 
     firebase.database().ref('messages/'+nextMessage.id).set(nextMessage)
@@ -61,39 +120,16 @@ submitMessage(event){
 }
 
 
+
   render() {
 
-    const currentMessage = this.state.messages.map((message, i) => {
-      return (
-         <p class="list-group-item-heading" key={message.id}>{message.text}
-         <span><hr/></span></p>
-      )
-    })
 
     return (
-
-       <div className="panel" id="chatPanel" >
-          <div className="panel-heading">
-              <h3 className="panel-title">Hike Up Chat</h3>
-              {/* <h3 className="panel-title">Hike Up Chat {authUser.email}</h3> */}
-          </div>
-          <div className="panel-body"  id="chatContainer">
-        
-        {/* <p>{authUser.email}: {currentMessage}</p> <br /> */}
-        <p> {currentMessage}</p> <br />
-
-          </div>
-          <div className="panel-footer">
-            <form id="message-form">
-               <input onChange={this.updateMessage} type="text" placeholder="message" id="chatMessage"/>
-               <button disabled={!this.state.message} 
-                       onClick={this.submitMessage}>
-                       <span class="glyphicon glyphicon-play" aria-hidden="true" id="chatGlyphicon"></span>
-                       </button>
-            </form>          
-          </div>
-     </div>
-      
+      <AuthUserContext.Consumer>
+        {(authUser, currentMessage) =>
+          this.authUserCallback(authUser, currentMessage)
+        }
+       </AuthUserContext.Consumer>
     
     );
   

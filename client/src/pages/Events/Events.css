@@ -15,5 +15,9 @@
     border-style: outset;
   }
   #eventPanelHeader{
-      background-color: lightgrey;
+    background-color: lightgrey;
+  }
+
+  .eventPic {
+    width: 200px;
   }
