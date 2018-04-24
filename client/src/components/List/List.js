@@ -3,10 +3,8 @@ import "./List.css";
 
 export const List = ({ children }) => {
   return (
-    <div>
-      <ul>
+    <div>  
         {children}
-      </ul>
     </div>
   );
 };

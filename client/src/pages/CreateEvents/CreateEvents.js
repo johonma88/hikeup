@@ -116,8 +116,8 @@ class CreateEvents extends Component {
             <Jumbotron>
               <h1>Create a HikeUp</h1>
             </Jumbotron>
-            <form>
-           Organize by: 
+            <form className="createEventForm">
+           Organized by: 
             <Input
                 id="inputEvent"
                 value={this.state.organizer}

@@ -17,3 +17,7 @@
   #eventPanelHeader{
       background-color: lightgrey;
   }
+
+  .eventPic {
+      width: 200px;
+  }

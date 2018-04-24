@@ -129,15 +129,31 @@ class Events extends Component {
             {this.state.events.length ? (
               <List>
                 {this.state.events.map(event => (
+
                   <ListItem key={event._id}>
-                  
-                      <strong>
-                        {event.title}   to {event.fourtennerSelected}
+                      {/* <strong>
+                        {event.title} <br/>
+                        {event.fourtennerSelected} <br/>
                       </strong>
+                      
                       <Link to={"/events/" + event._id}>    More Details ->
-                    </Link>
-                    <DeleteBtn onClick={() => this.deleteEvent(event._id)} />
+                      </Link>
+                    <DeleteBtn onClick={() => this.deleteEvent(event._id)} /> */}
+
+
+                    <img src={event.url} alt="Mountain Pic" className="eventPic"/>
+                    <div class="caption">
+                      <h3>{event.title}</h3>
+                      <h4>{event.fourtennerSelected}</h4>
+                      <p>
+                        <Link to={"/events/" + event._id}>    More Details ->
+                        </Link>
+                        <DeleteBtn onClick={() => this.deleteEvent(event._id)} />
+                      </p>
+                    </div>
+
                   </ListItem>
+
                 ))}
               </List>
             ) : (
