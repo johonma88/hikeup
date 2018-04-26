@@ -9,7 +9,6 @@ import "../../components/DropdownBtn/DropdownBtn.css";
 import SideMenu from  "../../components/SideMenu";
 import './Events.css'
 
-
 class Events extends Component {
 
   constructor(props)
@@ -160,8 +159,6 @@ class Events extends Component {
           </Col>
         </Row>
       </Container>
-
-
     );
   }
 }

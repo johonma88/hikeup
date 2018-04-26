@@ -1,6 +1,5 @@
 import React from 'react';
 import "./SideMenu.css";
-
 import ChatRoom from "../../components/ChatRoom";
 import AuthUserContext from '../Session/AuthUserContext';
 
@@ -18,7 +17,7 @@ const SideMenu = () =>
       <span><a href="/events">HikeUp Events</a></span><br />
       <span><a href="/create-events">Create HikeUp</a></span><br />
       <span><a href="/mtsinfo">Mountains</a></span><br />
-      <br /><br /><br /><br />
+      <br /><br />
       <ChatRoom />
   </div>
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import createClass from 'create-react-class';
 import VirtualizedSelect from 'react-virtualized-select';
-// import API from "../../utils/API";
 
 const API = require('../../utils/API');
 
@@ -21,13 +20,7 @@ var CitiesField = createClass({
             fourteeners: ""
 		});
 	},
-	// loadMountains = () => {
-	// 	API.getMountains()
-	// 	  .then(res =>
-	// 		this.setState({ mountains: res.data, mtranges: "", fourteeners: ""})
-	// 	  )
-	// 	  .catch(err => console.log(err));
-	//   },
+
 	render () {
 		var options = API.mountains;
 		return (

@@ -51,7 +51,7 @@ class SignUpForm extends Component {
           
           .then(() => {
             this.setState(() => ({ ...INITIAL_STATE }));
-            history.push(routes.EVENT);
+            history.push(routes.HOME);
             window.location.reload();
            
             

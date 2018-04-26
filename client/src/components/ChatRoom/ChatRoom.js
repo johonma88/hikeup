@@ -49,21 +49,16 @@ authUserCallback(authUser, currentMessage)
     if(this.state.messages && this.state.messages.length > 0)
     {
       return (
-        <div>
+      <div>
         {this.state.messages.map((message, index) => 
-         
         <p className="list-group-item-heading" key={message.id}>
-          <span id="chatUserDate">
-              {message.user}<br></br>
-              {message.date}
-          </span><br></br>
-                                               {message.text}
+                                               {message.user}
+                                               <br /> {message.date}
+                                               <br /> {message.text}
                                                <span> <hr/> </span>
-                                               </p>
-                                             )}
-        </div>
-        )}
- 
+                                               </p>)}
+        </div>)
+    }
     else
     {
       return (<p>No messages.</p>)

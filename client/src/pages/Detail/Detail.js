@@ -7,14 +7,12 @@ import SideMenu from  "../../components/SideMenu";
 import ThumbnailCustom from "../../components/ThumbnailCustom";
 import moment from 'moment';
 
-
 class Detail extends Component {
   state = {
     event: {},
     date: new Date(),
   };
 
- 
   // When this component mounts, grab the mountain with the _id of this.props.match.params.id
   // e.g. localhost:3000/mountains/599dcb67f0f16317844583fc
   componentDidMount() {

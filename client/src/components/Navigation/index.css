@@ -3,20 +3,6 @@
   color: red;
 }
 
-/* nav {
-  z-index: 2;
-} */
-
-/* .navbar{
-  margin: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 99.9%;
-  height: 4em;
-} */
-
 .logo {
   float: left;
   background-color: white;
@@ -24,11 +10,6 @@
   max-width: 40%;
   height: auto;
 }
-
-/* .nav a {
-  color: white;
-  font-family: 'Gugi', cursive;
-} */
 
 .shadow {
   -webkit-box-shadow: 2px 4px 5px 0px rgba(50, 50, 50, 0.75);
