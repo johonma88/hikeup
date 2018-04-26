@@ -7,7 +7,7 @@ const Footer = () =>
 <footer class="page-footer font-small blue pt-4 mt-4">
 
 <div class="footer-copyright py-3 text-center padStyle">
-    © 2018 Copyright: <a href="/"> CodeAholics </a>
+    <span id="footer"> © 2018 Copyright:</span> <a href="/"> CodeAholics </a>
 </div>
 
 </footer>
