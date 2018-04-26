@@ -110,6 +110,7 @@ submitMessage(event){
 
   event.preventDefault();
   document.getElementById("message-form").reset();
+  // eslint-disable-next-line
   this.state.message = ' ';
 
 }
