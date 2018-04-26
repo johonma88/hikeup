@@ -133,8 +133,6 @@ class Events extends Component {
                  
                   <ListItem key={event._id}>
                   
-
-
                     <img src={event.url} alt="Mountain Pic" className="eventPic"/>
                     <div class="caption">
                       <h3>{event.title}</h3>
@@ -142,7 +140,6 @@ class Events extends Component {
                       <p>
                         <Link to={"/events/" + event._id}>    More Details ->
                         </Link>
-                        {/* <DeleteBtn onClick={() => this.deleteEvent(event._id)} /> */}
                       </p>
                     </div>
 

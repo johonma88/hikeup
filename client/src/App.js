@@ -41,7 +41,7 @@ const AppAuth = () => (
         <Route exact path="/create-events" component={CreateEvents} />
         <Route exact path="/events/:id" component={Detail} />
         <Route exact path="/mtsinfo" component={Mountains} />
-      
+        <Route component={NoMatch} />
       
       </Switch>
       <Footer />
@@ -57,7 +57,7 @@ const AppNonAuth = () => (
       <Route exact path="/signup" component={SignUpPage} />
       <Route exact path="/signin" component={SignInPage} />
       <Route exact path="/pw-forget" component={PasswordForgetPage} />
-      <Route component={NoMatch} />
+      {/* <Route component={NoMatch} /> */}
     </Switch>
     <Footer />
   </div>
