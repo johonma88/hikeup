@@ -21,3 +21,8 @@
   .eventPic {
     width: 200px;
   }
+ #listEvent{
+  overflow: scroll;
+  height: 700px;
+  margin-bottom: 10%
+ }

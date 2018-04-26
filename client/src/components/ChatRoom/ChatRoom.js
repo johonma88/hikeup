@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import * as firebase from 'firebase';
 import "./ChatRoom.css";
+import moment from 'moment';
 
 import AuthUserContext from '../Session/AuthUserContext';
-// import WithAuthentication from '../Session/withAuthentication';
-
 
 class ChatRoom extends Component {
 
@@ -15,7 +14,8 @@ constructor (props, context) {
     this.state = {
       message: '',
       messages: [],
-      user: ''
+      user: '',
+      date: moment().format('LLL')
   }
 
   this.authUserCallback = this.authUserCallback.bind(this);
@@ -45,14 +45,25 @@ authUserCallback(authUser, currentMessage)
       });
       
     }
+
     if(this.state.messages && this.state.messages.length > 0)
     {
       return (
-      <div>
-        {this.state.messages.map((message, index) => <p className="list-group-item-heading" key={message.id}>{message.user}: <br />{message.text}
-                  <span><hr/></span></p>)}
-        </div>)
-    }
+        <div>
+        {this.state.messages.map((message, index) => 
+         
+        <p className="list-group-item-heading" key={message.id}>
+          <span id="chatUserDate">
+              {message.user}<br></br>
+              {message.date}
+          </span><br></br>
+                                               {message.text}
+                                               <span> <hr/> </span>
+                                               </p>
+                                             )}
+        </div>
+        )}
+ 
     else
     {
       return (<p>No messages.</p>)
@@ -95,7 +106,8 @@ submitMessage(event){
   const nextMessage = {
       id: this.state.messages.length,
       text: this.state.message,
-      user: this.state.user
+      user: this.state.user,
+      date: this.state.date
     }
 
     firebase.database().ref('messages/'+nextMessage.id).set(nextMessage)

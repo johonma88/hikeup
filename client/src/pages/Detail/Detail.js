@@ -26,37 +26,7 @@ class Detail extends Component {
   render() {
     return (
       <Container fluid>
-        {/* <Row>
-        <Col size="md-3">
-      <SideMenu />
-        </Col>
-          <Col size="md-8 centered">
-            <Jumbotron>
-              <h1>{this.state.event.title}</h1>
-            </Jumbotron>
-            <Link to="/events">← Back to Events</Link>
-        
-            <div className="container">
-          <Row>
-           <Col size="md-6"> 
-              
-             <h4> <strong id="tag">Description: </strong> {this.state.event.description}</h4>
-             <h4> <strong id="tag">Mountain: </strong> {this.state.event.fourtennerSelected}</h4>
-             <h4> <strong id="tag">Time/ Date:</strong> {this.state.event.date} at  {this.state.event.time}</h4>
-         </Col>
-
-          <Col size="md-6"> 
-          <h4> <strong id="tag">Contact Info: </strong> {this.state.event.organizer}</h4>
-          <h4> <strong id="tag">Phone/Email: </strong> {this.state.event.contactInfo}</h4>
-          <h4> <strong id="tag">Meeting Point: </strong> {this.state.event.meetingPoint}</h4>  
-          </Col>
-              <ThumbnailCustom key={this.state.event._id}>
-                    <img src={this.state.event.url} alt=""/>
-               </ThumbnailCustom>
-          </Row>
-       </div>
-   </Col>
-      </Row> */}
+       
        <Row>
         <Col size="md-3">
       <SideMenu />
@@ -74,7 +44,7 @@ class Detail extends Component {
              <h4> <strong id="tag">Description: </strong> {this.state.event.description}</h4>
              <h4> <strong id="tag">Mountain: </strong> {this.state.event.fourtennerSelected}</h4>
              <h4> <strong id="tag">Time/ Date:</strong> {moment(this.state.event.date).format("DD-MMM-YYYY")}  at  {this.state.event.time}</h4>
-             {/* <h4> <strong id="tag">Time/ Date:</strong> {this.state.event.date} at  {this.state.event.time}</h4> */}
+            
           <h4> <strong id="tag">Organizer: </strong> {this.state.event.organizer}</h4>
           <h4> <strong id="tag">Phone/Email: </strong> {this.state.event.contactInfo}</h4>
           <h4> <strong id="tag">Meeting Point: </strong> {this.state.event.meetingPoint}</h4>  

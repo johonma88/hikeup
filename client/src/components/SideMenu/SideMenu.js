@@ -5,14 +5,14 @@ import ChatRoom from "../../components/ChatRoom";
 import AuthUserContext from '../Session/AuthUserContext';
 
 const SideMenu = () =>
-  <AuthUserContext.Consumer>
-    {authUser => authUser
-      ? <SideMenuAuth />
-      : <SideMenuNonAuth />
-    }
-  </AuthUserContext.Consumer>
+//   <AuthUserContext.Consumer>
+//     {authUser => authUser
+//       ? <SideMenuAuth />
+//       : <SideMenuNonAuth />
+//     }
+//   </AuthUserContext.Consumer>
 
-const SideMenuAuth = () =>
+// const SideMenuAuth = () =>
 
   <div class="container-fluid" id="sidemenu">
       <span><a href="/events">HikeUp Events</a></span><br />
@@ -22,11 +22,10 @@ const SideMenuAuth = () =>
       <ChatRoom />
   </div>
 
-const SideMenuNonAuth = () =>
+// const SideMenuNonAuth = () =>
 
-<div class="container-fluid" id="sidemenu">
-    <br /><br /><br /><br />
-    <ChatRoom /> */}
-</div>
+// <div class="container-fluid" id="sidemenu">
+    
+// </div>
 
 export default SideMenu;

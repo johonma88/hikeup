@@ -126,19 +126,14 @@ class Events extends Component {
 
             </Jumbotron>
           <Row>
+       
             {this.state.events.length ? (
+                 <div id="listEvent">
               <List>
                 {this.state.events.map(event => (
-
+                 
                   <ListItem key={event._id}>
-                      {/* <strong>
-                        {event.title} <br/>
-                        {event.fourtennerSelected} <br/>
-                      </strong>
-                      
-                      <Link to={"/events/" + event._id}>    More Details ->
-                      </Link>
-                    <DeleteBtn onClick={() => this.deleteEvent(event._id)} /> */}
+                  
 
 
                     <img src={event.url} alt="Mountain Pic" className="eventPic"/>
@@ -148,15 +143,16 @@ class Events extends Component {
                       <p>
                         <Link to={"/events/" + event._id}>    More Details ->
                         </Link>
-                        <DeleteBtn onClick={() => this.deleteEvent(event._id)} />
+                        {/* <DeleteBtn onClick={() => this.deleteEvent(event._id)} /> */}
                       </p>
                     </div>
 
                   </ListItem>
-
+               
                 ))}
               </List>
-            ) : (
+              </div>
+            )   : (
               <h3>No Results to Display</h3>
             )}
             

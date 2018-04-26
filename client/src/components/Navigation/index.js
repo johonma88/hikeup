@@ -32,7 +32,7 @@ const NavigationAuth = () =>
      
   
       <li>
-    <a href="account">  <i className="glyphicon glyphicon-user"></i>Account</a>
+    <a href="/account">  <i className="glyphicon glyphicon-user"></i>Account</a>
     </li>
 
       <SignOutButton />
