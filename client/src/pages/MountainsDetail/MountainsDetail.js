@@ -5,8 +5,6 @@ import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import ThumbnailCustom from "../../components/ThumbnailCustom";
 import SideMenu from  "../../components/SideMenu";
-// import Modal from  "../../components/Modal/Modal";
-
 
 class MountainsDetail extends Component {
   state = {
@@ -33,7 +31,6 @@ class MountainsDetail extends Component {
                 Fourteener: {this.state.mountain.fourteeners} 
               </h3>
             </Jumbotron>
-
            
                <div class="thumbnail">
                <ThumbnailCustom key={this.state.mountain._id}>
@@ -51,7 +48,6 @@ class MountainsDetail extends Component {
               </div>
               </div>
     
-
             <Row>
           <Col size="md-10 md-offset-1">
 
@@ -68,8 +64,6 @@ class MountainsDetail extends Component {
         </Row>
       </Container>
 
-
-   
     );
   }
 }

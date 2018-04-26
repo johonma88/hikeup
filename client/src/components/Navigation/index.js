@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 
 import AuthUserContext from '../Session/AuthUserContext';
 import SignOutButton from '../SignOut';
@@ -8,9 +7,6 @@ import { Link } from 'react-router-dom';
 import * as routes from '../../constants/routes';
 
 import "./index.css";
-
-
-// import * as routes from '../../constants/routes';
 
 const Navigation = () =>
   <AuthUserContext.Consumer>
@@ -29,19 +25,15 @@ const NavigationAuth = () =>
     </div>
     <ul class="nav navbar-nav navbar-right">
 
-     
-  
       <li>
     <a href="account">  <i className="glyphicon glyphicon-user"></i>Account</a>
     </li>
 
       <SignOutButton />
     </ul>
-
   
   </div>
 </nav>
-
 
 const NavigationNonAuth = () =>
  
