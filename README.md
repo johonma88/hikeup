@@ -1,5 +1,5 @@
 # HikeUp Hiking App (Project 3)
-A hike-searching/hke-posting application that uses Node.js, MongoDB, Firebase DB(Authentication), ReactJS & Reactstrap.
+A hike-searching/hike-posting application that uses Node.js, MongoDB, Firebase DB(Authentication), ReactJS & Reactstrap.
 
 ## Description
 
@@ -29,7 +29,7 @@ Then, the user can create his/her Login credentials by clicking on "SIGN UP". On
 
 ## Demo
 
-The demo of this application can be found [here]().
+The demo of this application can be found [here](https://hikeup-ajk.herokuapp.com/).
 
 ## Installation
 
