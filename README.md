@@ -1,5 +1,3 @@
-# hikeup
-
 # HikeUp Hiking App (Project 3)
 A hike-searching/hke-posting application that uses Node.js, MongoDB, Firebase DB(Authentication), ReactJS & Reactstrap.
 
