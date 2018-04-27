@@ -11,9 +11,11 @@ The user is welcomed with the homescreen, which shows a little about the app its
 
 <img src="./images/intro.jpg" alt="Introduction App" height="600">
 
+
 Then, the user can create his/her Login credentials by clicking on "SIGN UP". Once the new user's profile has been created, they can gain access to the full site and start using all of its functionlities (like "Create/View a HikeUp", "Chat with other hikers", view relevant up to date information about the mountain they want to summit, etc).
 
 <img src="./images/signup.jpg" alt="Functions" height="600">
+
 
 ### Additional facts:
 
@@ -22,6 +24,7 @@ Then, the user can create his/her Login credentials by clicking on "SIGN UP". On
 * On Create a HikeUp, the user can fill the input fields and create an event. Once this step is completed, this data will be saved in the database.
 
 <img src="./images/event.jpg" alt="Create Post" height="600">
+
 
 * Log out option (located on the username's drop-down menu), will destroy local session. And rediect to homepage.  
 
