@@ -65,7 +65,6 @@ authUserCallback(authUser, currentMessage)
     }
   };
   
-
   return (
 
 <div className="panel" id="chatPanel" >
