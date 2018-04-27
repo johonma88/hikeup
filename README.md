@@ -35,7 +35,7 @@ The demo of this application can be found [here](https://hikeup-ajk.herokuapp.co
 
 To run the application locally, first clone this repository with the following command.
 
-	git clone https://github.com/miguelaw/hikeup.git
+	git clone https://github.com/johonma88/hikeup.git
 	
 Access to the project's folder
 
